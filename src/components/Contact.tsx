@@ -93,9 +93,23 @@ const Contact = () => {
 
         <div className="contact-card relative bg-gradient-to-br from-white via-gray-50 to-white rounded-3xl shadow-2xl p-1 border border-gray-200 max-w-3xl mx-auto">
           <div className="bg-white rounded-3xl p-8 md:p-10">
-            <h3 className="text-3xl md:text-4xl font-bold text-dark-900 mb-8 text-center bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent">
+            <h3 className="text-3xl md:text-4xl font-bold text-dark-900 mb-4 text-center bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent">
               Open an Account in Minutes
             </h3>
+            <p className="text-center text-gray-600 mb-8">
+              Ready to start trading? Click below to open your free account or fill the form for more information.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" className="bg-primary-500 hover:bg-primary-600 text-white font-bold px-8 py-3 rounded-xl transition-all duration-200 hover:scale-105 text-center">
+                Open Account Now
+              </a>
+              <a href="https://fx777crm.theplatformapi.com/auth-pages/login" target="_blank" rel="noopener noreferrer" className="border-2 border-primary-500 text-primary-600 hover:bg-primary-50 font-bold px-8 py-3 rounded-xl transition-all duration-200 text-center">
+                Login to Account
+              </a>
+            </div>
+            <p className="text-center text-sm text-gray-500 mb-8 border-t pt-8">
+              Or send us a message below for any questions
+            </p>
           <form className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
