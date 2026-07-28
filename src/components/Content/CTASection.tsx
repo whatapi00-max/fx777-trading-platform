@@ -3,13 +3,17 @@ interface CTASectionProps {
   description: string
   primaryButtonText?: string
   secondaryButtonText?: string
+  primaryButtonLink?: string
+  secondaryButtonLink?: string
 }
 
 const CTASection = ({ 
   heading, 
   description, 
   primaryButtonText = 'Open Account',
-  secondaryButtonText = 'Learn More'
+  secondaryButtonText = 'Learn More',
+  primaryButtonLink = 'https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real',
+  secondaryButtonLink = '#'
 }: CTASectionProps) => {
   return (
     <section>
@@ -21,12 +25,12 @@ const CTASection = ({
           {description}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-white hover:bg-gray-100 text-primary-600 font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg">
+          <a href={primaryButtonLink} target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-gray-100 text-primary-600 font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg text-center">
             {primaryButtonText}
-          </button>
-          <button className="bg-dark-900 hover:bg-dark-800 text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg">
+          </a>
+          <a href={secondaryButtonLink} className="bg-dark-900 hover:bg-dark-800 text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg text-center">
             {secondaryButtonText}
-          </button>
+          </a>
         </div>
       </div>
     </section>

@@ -98,9 +98,9 @@ const WhyChooseUs = () => {
               </div>
             ))}
 
-            <button className="mt-4 inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white font-bold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-105 shadow-sm text-sm">
+            <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white font-bold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-105 shadow-sm text-sm">
               Start Trading Now <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
           </div>
 
           {/* Image column */}

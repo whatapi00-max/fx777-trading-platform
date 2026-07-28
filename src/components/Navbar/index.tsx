@@ -54,12 +54,12 @@ const Navbar = () => {
             <DesktopNav items={navigationItems} />
 
             <div className="hidden lg:flex items-center space-x-3">
-              <button className="bg-white hover:bg-gray-100 text-primary-600 font-bold px-6 py-2.5 rounded-xl transition-all duration-200 hover:scale-105 shadow-sm border-2 border-primary-500">
+              <a href="https://fx777crm.theplatformapi.com/auth-pages/login" target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-gray-100 text-primary-600 font-bold px-6 py-2.5 rounded-xl transition-all duration-200 hover:scale-105 shadow-sm border-2 border-primary-500">
                 Login
-              </button>
-              <button className="bg-primary-500 hover:bg-primary-600 text-white font-bold px-6 py-2.5 rounded-xl transition-all duration-200 hover:scale-105 shadow-sm">
+              </a>
+              <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" className="bg-primary-500 hover:bg-primary-600 text-white font-bold px-6 py-2.5 rounded-xl transition-all duration-200 hover:scale-105 shadow-sm">
                 Register
-              </button>
+              </a>
             </div>
 
             {/* Hamburger — plain flex item, no position:fixed to avoid backdrop-filter containing-block bug */}

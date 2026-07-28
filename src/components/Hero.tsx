@@ -81,12 +81,9 @@ const Hero = () => {
 
             {/* CTA */}
             <div className="hero-cta flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-              <button className="bg-primary-500 hover:bg-primary-600 text-white font-bold px-8 py-3.5 rounded-xl transition-all duration-200 hover:scale-105 shadow-md text-base">
+              <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" className="bg-primary-500 hover:bg-primary-600 text-white font-bold px-8 py-3.5 rounded-xl transition-all duration-200 hover:scale-105 shadow-md text-base text-center">
                 Open Free Account
-              </button>
-              <button className="border-2 border-gray-200 text-dark-700 hover:border-primary-400 hover:text-primary-600 font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 text-base">
-                View Markets
-              </button>
+              </a>
             </div>
 
             {/* Stats */}
