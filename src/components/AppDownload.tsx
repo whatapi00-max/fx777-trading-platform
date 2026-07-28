@@ -97,17 +97,6 @@ const AppDownload = () => {
               </div>
               <Download className="w-6 h-6 text-primary-500 group-hover:translate-y-1 transition-transform" />
             </a>
-
-            {/* QR Code placeholder */}
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center">
-              <p className="text-white/80 text-sm font-medium mb-3">Scan to Download</p>
-              <div className="w-32 h-32 bg-white rounded-lg mx-auto flex items-center justify-center">
-                <div className="text-center">
-                  <p className="text-xs text-gray-400">QR Code</p>
-                  <p className="text-xs text-gray-400">Coming Soon</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
