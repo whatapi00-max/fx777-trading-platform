@@ -129,12 +129,24 @@ const MobileNav = ({ id, items, isOpen, onClose }: MobileNavProps) => {
 
         {/* Sticky CTA footer */}
         <div className="px-4 py-4 border-t border-gray-100 flex-shrink-0 space-y-2">
-          <button className="w-full border-2 border-primary-500 text-primary-600 font-bold py-3 rounded-xl hover:bg-primary-50 transition-colors text-sm">
+          <a
+            href="https://fx777crm.theplatformapi.com/auth-pages/login"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center border-2 border-primary-500 text-primary-600 font-bold py-3 rounded-xl hover:bg-primary-50 transition-colors text-sm"
+            onClick={onClose}
+          >
             Login
-          </button>
-          <button className="w-full bg-primary-500 hover:bg-primary-600 text-white font-bold py-3 rounded-xl transition-colors text-sm">
+          </a>
+          <a
+            href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center bg-primary-500 hover:bg-primary-600 text-white font-bold py-3 rounded-xl transition-colors text-sm"
+            onClick={onClose}
+          >
             Register Free
-          </button>
+          </a>
         </div>
       </div>
     </>
