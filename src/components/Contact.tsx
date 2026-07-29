@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Contact = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
+  const formRef = useRef<HTMLFormElement>(null)
   const [result, setResult] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -25,15 +26,21 @@ const Contact = () => {
       })
 
       const data = await response.json()
-      console.log("Web3Forms response:", data)
+      console.log("Web3Forms full response:", JSON.stringify(data, null, 2))
+      console.log("Response status:", response.status)
+      console.log("Response ok:", response.ok)
       
-      // Web3Forms returns success: true even if there are issues
-      // Check if the response is successful based on status code
-      if (response.ok) {
+      // Web3Forms API returns success field
+      // Try multiple success checks
+      const isSuccess = data.success === true || data.success === "true" || response.ok
+      
+      if (isSuccess) {
         setResult("Message sent successfully!")
-        event.currentTarget.reset()
+        if (formRef.current) {
+          formRef.current.reset()
+        }
       } else {
-        console.error("Web3Forms HTTP error:", response.status, data)
+        console.error("Web3Forms submission failed:", data)
         setResult(data.message || "Error sending message. Please try again.")
       }
     } catch (error) {
@@ -138,7 +145,7 @@ const Contact = () => {
             <p className="text-center text-sm text-gray-500 mb-8 border-t pt-8">
               Or send us a message below for any questions
             </p>
-          <form onSubmit={onSubmit} className="space-y-6">
+          <form ref={formRef} onSubmit={onSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-semibold text-dark-700 mb-2">
