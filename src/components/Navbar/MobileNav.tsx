@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { ChevronDown } from 'lucide-react'
 import { NavItem } from './types'
 
@@ -12,7 +12,6 @@ interface MobileNavProps {
 
 const MobileNav = ({ id, items, isOpen, onClose }: MobileNavProps) => {
   const [expandedItems, setExpandedItems] = useState<string[]>([])
-  const location = useLocation()
 
   // Lock body scroll when drawer is open
   useEffect(() => {
@@ -20,20 +19,11 @@ const MobileNav = ({ id, items, isOpen, onClose }: MobileNavProps) => {
     return () => { document.body.style.overflow = '' }
   }, [isOpen])
 
-  // Close drawer on route change
-  useEffect(() => {
-    onClose()
-    setExpandedItems([])
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.pathname])
-
   const toggleExpanded = (name: string) => {
     setExpandedItems(prev =>
       prev.includes(name) ? prev.filter(i => i !== name) : [...prev, name]
     )
   }
-
-  const isActive = (href?: string) => href ? location.pathname === href : false
 
   return (
     <>
@@ -73,11 +63,7 @@ const MobileNav = ({ id, items, isOpen, onClose }: MobileNavProps) => {
                 {item.href ? (
                   <Link
                     to={item.href}
-                    className={`flex items-center px-4 py-3 rounded-xl font-semibold text-sm transition-colors ${
-                      isActive(item.href)
-                        ? 'bg-primary-500 text-white'
-                        : 'text-dark-700 hover:bg-gray-100'
-                    }`}
+                    className="flex items-center px-4 py-3 rounded-xl font-semibold text-sm transition-colors text-dark-700 hover:bg-gray-100"
                     onClick={onClose}
                   >
                     {item.name}
@@ -102,11 +88,7 @@ const MobileNav = ({ id, items, isOpen, onClose }: MobileNavProps) => {
                           <li key={index}>
                             <Link
                               to={dropdownItem.href}
-                              className={`block px-3 py-2.5 rounded-lg text-sm transition-colors ${
-                                isActive(dropdownItem.href)
-                                  ? 'text-primary-600 font-semibold bg-primary-50'
-                                  : 'text-dark-600 hover:bg-gray-100 hover:text-dark-900'
-                              }`}
+                              className="block px-3 py-2.5 rounded-lg text-sm transition-colors text-dark-600 hover:bg-gray-100 hover:text-dark-900"
                               onClick={onClose}
                             >
                               {dropdownItem.name}
