@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Send } from 'lucide-react'
 
 const footerSections = [
   {
@@ -45,11 +45,10 @@ const footerSections = [
 ]
 
 const socialLinks = [
-  { Icon: Facebook,  href: '#', label: 'Facebook' },
-  { Icon: Twitter,   href: '#', label: 'Twitter' },
+  { Icon: Facebook,  href: 'https://www.facebook.com/share/18EUTzkhJ3/', label: 'Facebook' },
   { Icon: Instagram, href: '#', label: 'Instagram' },
-  { Icon: Linkedin,  href: '#', label: 'LinkedIn' },
-  { Icon: Youtube,   href: '#', label: 'YouTube' },
+  { Icon: Linkedin,  href: 'https://www.linkedin.com/company/fx777/', label: 'LinkedIn' },
+  { Icon: Send,      href: 'https://t.me/+WjNvsNrfywBiMTk0', label: 'Telegram' },
 ]
 
 const Footer = () => {

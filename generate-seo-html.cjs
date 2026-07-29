@@ -1,20 +1,7 @@
-import { Plugin } from 'vite'
-import fs from 'fs'
-import path from 'path'
+const fs = require('fs');
+const path = require('path');
 
-interface RouteMetadata {
-  path: string
-  title: string
-  description: string
-  keywords: string
-  ogTitle: string
-  ogDescription: string
-  ogImage: string
-  ogType: string
-  canonical: string
-}
-
-const routes: RouteMetadata[] = [
+const routes = [
   {
     path: '/',
     title: 'FX777 - Premium Trading Platform | Trade Forex, Stocks, Commodities',
@@ -125,9 +112,20 @@ const routes: RouteMetadata[] = [
     ogType: 'website',
     canonical: 'https://www.fx777.in/trading/terms',
   },
-]
+];
 
-function generateMetaTags(metadata: RouteMetadata): string {
+function escapeHtml(text) {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;',
+  };
+  return text.replace(/[&<>"']/g, (m) => map[m]);
+}
+
+function generateMetaTags(metadata) {
   return `    <title>${escapeHtml(metadata.title)}</title>
     <meta name="description" content="${escapeHtml(metadata.description)}" />
     <meta name="keywords" content="${escapeHtml(metadata.keywords)}" />
@@ -140,61 +138,49 @@ function generateMetaTags(metadata: RouteMetadata): string {
     <meta name="twitter:title" content="${escapeHtml(metadata.ogTitle)}" />
     <meta name="twitter:description" content="${escapeHtml(metadata.ogDescription)}" />
     <meta name="twitter:image" content="${metadata.ogImage}" />
-    <link rel="canonical" href="${metadata.canonical}" />`
+    <link rel="canonical" href="${metadata.canonical}" />`;
 }
 
-function escapeHtml(text: string): string {
-  const map: { [key: string]: string } = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;',
+// Read the built index.html
+const distPath = path.resolve(__dirname, 'dist');
+const indexHtmlPath = path.join(distPath, 'index.html');
+
+if (!fs.existsSync(indexHtmlPath)) {
+  console.error('Error: dist/index.html not found. Please run "npm run build" first.');
+  process.exit(1);
+}
+
+let indexHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
+
+// Generate route-specific HTML files
+routes.forEach(route => {
+  let routeHtml = indexHtml;
+
+  // Remove old meta tags and title
+  routeHtml = routeHtml.replace(/<title>.*?<\/title>/s, '');
+  routeHtml = routeHtml.replace(/<meta name="description".*?\/>/s, '');
+  routeHtml = routeHtml.replace(/<meta name="keywords".*?\/>/s, '');
+  routeHtml = routeHtml.replace(/<meta property="og:.*?\/>/gs, '');
+  routeHtml = routeHtml.replace(/<meta name="twitter:.*?\/>/gs, '');
+  routeHtml = routeHtml.replace(/<link rel="canonical".*?\/>/s, '');
+
+  // Insert new meta tags before closing </head>
+  const metaTags = generateMetaTags(route);
+  routeHtml = routeHtml.replace('</head>', `${metaTags}\n  </head>`);
+
+  // Determine output path
+  let outputPath = route.path === '/' ? 'index.html' : `${route.path.slice(1)}/index.html`;
+  const fullPath = path.join(distPath, outputPath);
+
+  // Create directory if needed
+  const dir = path.dirname(fullPath);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
   }
-  return text.replace(/[&<>"']/g, (m) => map[m])
-}
 
-export function seoPlugin(): Plugin {
-  return {
-    name: 'vite-seo-plugin',
-    apply: 'build',
-    async generateBundle(options, bundle) {
-      // Read the original index.html
-      const indexHtmlPath = path.resolve(__dirname, 'index.html')
-      let indexHtml = fs.readFileSync(indexHtmlPath, 'utf-8')
+  // Write the file
+  fs.writeFileSync(fullPath, routeHtml);
+  console.log(`Generated: ${outputPath}`);
+});
 
-      // Store the script tags from the original HTML
-      const scriptTagMatch = indexHtml.match(/<script type="module"[^>]*>[\s\S]*?<\/script>/)
-      const originalScriptTag = scriptTagMatch ? scriptTagMatch[0] : ''
-
-      // Generate route-specific HTML files
-      for (const route of routes) {
-        let routeHtml = indexHtml
-
-        // Replace meta tags
-        const metaTags = generateMetaTags(route)
-        
-        // Remove old meta tags and title
-        routeHtml = routeHtml.replace(/<title>.*?<\/title>/s, '')
-        routeHtml = routeHtml.replace(/<meta name="description".*?\/>/s, '')
-        routeHtml = routeHtml.replace(/<meta name="keywords".*?\/>/s, '')
-        routeHtml = routeHtml.replace(/<meta property="og:.*?\/>/gs, '')
-        routeHtml = routeHtml.replace(/<meta name="twitter:.*?\/>/gs, '')
-        routeHtml = routeHtml.replace(/<link rel="canonical".*?\/>/s, '')
-
-        // Insert new meta tags before closing </head>
-        routeHtml = routeHtml.replace('</head>', `${metaTags}\n  </head>`)
-
-        // Determine output path - remove leading slash for fileName
-        let outputPath = route.path === '/' ? 'index.html' : `${route.path.slice(1)}/index.html`
-        
-        // Add to bundle
-        this.emitFile({
-          type: 'asset',
-          fileName: outputPath,
-          source: routeHtml,
-        })
-      }
-    },
-  }
-}
+console.log('\nSEO HTML files generated successfully!');
