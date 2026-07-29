@@ -38,10 +38,10 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-primary-50/60 via-white to-white pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
 
           {/* Text — first on desktop, second on mobile */}
-          <div className="order-2 lg:order-1 space-y-6 text-center lg:text-left">
+          <div className="order-2 lg:order-1 space-y-6 text-center lg:text-left pt-0 lg:pt-8">
 
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 border border-primary-200 rounded-full px-4 py-1.5 text-sm font-medium">
@@ -98,19 +98,18 @@ const Hero = () => {
           </div>
 
           {/* Image — first on mobile, second on desktop */}
-          <div className="hero-image order-1 lg:order-2 flex justify-center">
-            <div className="relative w-full max-w-md lg:max-w-full">
+          <div className="hero-image order-1 lg:order-2 flex justify-center lg:justify-end lg:mt-32">
+            <div className="relative w-full max-w-sm lg:max-w-4xl">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5">
                 <img
-                  src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop"
+                  src="/Hero.png"
                   alt="FX777 Trading Platform"
-                  className="w-full object-cover"
-                  style={{ maxHeight: '480px' }}
+                  className="w-full h-auto object-contain"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-900/50 via-transparent to-transparent" />
 
-                {/* Floating card */}
-                <div className="absolute bottom-4 left-4 right-4">
+                {/* Floating card - hidden on mobile and small screens */}
+                <div className="hidden lg:block absolute -bottom-20 left-4 right-4">
                   <div className="bg-white rounded-xl p-3.5 shadow-lg flex items-center gap-3">
                     <div className="w-9 h-9 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
                       <TrendingUp className="w-5 h-5 text-primary-600" />
