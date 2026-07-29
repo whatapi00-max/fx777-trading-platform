@@ -46,7 +46,7 @@ const footerSections = [
 
 const socialLinks = [
   { Icon: Facebook,  href: 'https://www.facebook.com/share/18EUTzkhJ3/', label: 'Facebook' },
-  { Icon: Instagram, href: '#', label: 'Instagram' },
+  { Icon: Instagram, href: 'https://www.instagram.com/fx777__official?igsh=cHlybnJhZDcxY2o0', label: 'Instagram' },
   { Icon: Linkedin,  href: 'https://www.linkedin.com/company/fx777/', label: 'LinkedIn' },
   { Icon: Send,      href: 'https://t.me/+WjNvsNrfywBiMTk0', label: 'Telegram' },
 ]
