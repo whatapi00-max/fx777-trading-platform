@@ -39,15 +39,6 @@ const Regulations = () => {
           </div>
         </section>
 
-        <section className="bg-white p-8 rounded-xl border border-gray-200">
-          <h2 className="text-2xl font-bold text-dark-900 mb-6">Licenses & Certifications</h2>
-          <div className="space-y-4 text-gray-700">
-            <p>• Licensed by [Regulatory Authority Name]</p>
-            <p>• Member of [Industry Association]</p>
-            <p>• Compliant with [Relevant Regulations]</p>
-            <p>• ISO Certified for Quality Management</p>
-          </div>
-        </section>
       </div>
     </PageLayout>
   )
