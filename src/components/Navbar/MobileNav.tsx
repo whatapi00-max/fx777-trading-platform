@@ -122,7 +122,7 @@ const MobileNav = ({ id, items, isOpen, onClose }: MobileNavProps) => {
             className="block w-full text-center bg-primary-500 hover:bg-primary-600 text-white font-bold py-3 rounded-xl transition-colors text-sm"
             onClick={onClose}
           >
-            Register Free
+            Sign Up
           </a>
         </div>
       </div>
