@@ -46,9 +46,9 @@ const Terms = () => {
         <section className="bg-gradient-to-r from-primary-50 to-primary-100 p-8 rounded-xl border border-primary-200">
           <h3 className="text-xl font-bold text-dark-900 mb-4">Questions about our terms?</h3>
           <p className="text-gray-700 mb-4">Contact our support team for clarification on any terms and conditions.</p>
-          <button className="bg-primary-500 hover:bg-primary-600 text-dark-900 font-bold px-6 py-3 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-md">
+          <a href="/contact" className="inline-block bg-primary-500 hover:bg-primary-600 text-dark-900 font-bold px-6 py-3 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-md text-center">
             Contact Support
-          </button>
+          </a>
         </section>
       </div>
     </PageLayout>

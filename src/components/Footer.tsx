@@ -37,9 +37,7 @@ const footerSections = [
     links: [
       { label: 'Privacy Policy',    href: '/legal/privacy-policy' },
       { label: 'Terms & Conditions',href: '/legal/terms-conditions' },
-      { label: 'Risk Disclosure',   href: '/legal/risk-disclosure' },
-      { label: 'AML Policy',        href: '/legal/aml-policy' },
-      { label: 'KYC Policy',        href: '/legal/kyc-policy' },
+      { label: 'Risk Warning',      href: '/legal/risk-warning' },
       { label: 'Cookie Policy',     href: '/legal/cookie-policy' },
       { label: 'Disclaimer',        href: '/legal/disclaimer' },
     ],
@@ -66,12 +64,7 @@ const Footer = () => {
           {/* Brand column */}
           <div className="col-span-2 lg:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-5">
-              <div className="w-9 h-9 bg-primary-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">FX</span>
-              </div>
-              <span className="text-xl font-bold">
-                FX<span className="text-primary-500">777</span>
-              </span>
+              <img src="/logo.png" alt="FX777 Logo" className="h-9 w-auto" />
             </Link>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
               FX777 is a premium global trading platform. Trade forex, stocks, commodities, 
@@ -113,16 +106,9 @@ const Footer = () => {
 
         {/* Regulatory disclaimer */}
         <div className="border-t border-dark-800 pt-8 mb-6">
-          <div className="grid md:grid-cols-2 gap-4 text-xs text-gray-500 leading-relaxed">
-            <div>
-              <p className="mb-1"><span className="text-gray-400 font-medium">Registered Office:</span> Mumbai, Maharashtra, India</p>
-              <p className="mb-1"><span className="text-gray-400 font-medium">SEBI Registration:</span> INZ000XXXXXXX</p>
-              <p><span className="text-gray-400 font-medium">NSE Member Code:</span> XXXXX &nbsp;|&nbsp; <span className="text-gray-400 font-medium">BSE Member Code:</span> XXXXX</p>
-            </div>
-            <div>
-              <p>Investments in securities market are subject to market risks. Read all related documents carefully before investing.
-                As per SEBI research, ~70-80% of individual traders in equity F&amp;O incur net losses.</p>
-            </div>
+          <div className="text-xs text-gray-500 leading-relaxed">
+            <p>Investments in securities market are subject to market risks. Read all related documents carefully before investing.
+              As per SEBI research, ~70-80% of individual traders in equity F&amp;O incur net losses.</p>
           </div>
         </div>
 
@@ -133,7 +119,7 @@ const Footer = () => {
           </p>
           <div className="flex flex-wrap gap-4 text-xs">
             <Link to="/legal/privacy-policy"     className="text-gray-500 hover:text-primary-400 transition-colors">Privacy Policy</Link>
-            <Link to="/legal/terms-conditions"   className="text-gray-500 hover:text-primary-400 transition-colors">Terms of Service</Link>
+            <Link to="/legal/terms-conditions"   className="text-gray-500 hover:text-primary-400 transition-colors">Terms & Conditions</Link>
             <Link to="/legal/cookie-policy"      className="text-gray-500 hover:text-primary-400 transition-colors">Cookie Policy</Link>
             <Link to="/legal/disclaimer"         className="text-gray-500 hover:text-primary-400 transition-colors">Disclaimer</Link>
           </div>

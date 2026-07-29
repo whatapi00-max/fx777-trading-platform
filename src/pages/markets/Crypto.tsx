@@ -41,8 +41,8 @@ const Crypto = () => {
             <h3 className="text-2xl md:text-3xl font-bold text-dark-900 mb-4">Start Crypto Trading</h3>
             <p className="text-dark-800 mb-6 max-w-2xl mx-auto">Join the crypto revolution today</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white hover:bg-gray-100 text-primary-600 font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg">Open Account</button>
-              <button className="bg-dark-900 hover:bg-dark-800 text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg">Learn More</button>
+              <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-gray-100 text-primary-600 font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg text-center">Open Account</a>
+              <a href="/support/trading-guide" className="bg-dark-900 hover:bg-dark-800 text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg text-center">Learn More</a>
             </div>
           </div>
         </section>

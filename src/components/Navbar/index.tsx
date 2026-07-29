@@ -42,12 +42,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-16 md:h-20">
             <div className="flex-shrink-0">
               <Link to="/" className="flex items-center space-x-2 group">
-                <div className="w-9 h-9 md:w-10 md:h-10 bg-primary-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-                  <span className="text-white font-bold text-lg md:text-xl">FX</span>
-                </div>
-                <span className="text-xl md:text-2xl font-bold text-dark-900">
-                  FX<span className="text-primary-500">777</span>
-                </span>
+                <img src="/logo.png" alt="FX777 Logo" className="h-9 md:h-10 w-auto group-hover:scale-110 transition-transform duration-200" />
               </Link>
             </div>
 

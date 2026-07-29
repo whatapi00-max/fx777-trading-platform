@@ -136,9 +136,9 @@ const FAQ = () => {
           <p className="text-gray-600 mb-6">
             Our support team is here to help you 24/7
           </p>
-          <button className="bg-primary-500 hover:bg-primary-600 text-dark-900 font-bold px-10 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg">
+          <a href="/contact" className="inline-block bg-primary-500 hover:bg-primary-600 text-dark-900 font-bold px-10 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg">
             Contact Support
-          </button>
+          </a>
         </div>
       </div>
     </section>

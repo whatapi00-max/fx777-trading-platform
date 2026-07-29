@@ -48,8 +48,8 @@ const Affiliate = () => {
             <h3 className="text-2xl md:text-3xl font-bold text-dark-900 mb-4">Ready to Start Earning?</h3>
             <p className="text-dark-800 mb-6 max-w-2xl mx-auto">Join our affiliate program today and start earning commissions</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white hover:bg-gray-100 text-primary-600 font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg">Apply Now</button>
-              <button className="bg-dark-900 hover:bg-dark-800 text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg">Learn More</button>
+              <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-gray-100 text-primary-600 font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg text-center">Apply Now</a>
+              <a href="/about/affiliate" className="bg-dark-900 hover:bg-dark-800 text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg text-center">Learn More</a>
             </div>
           </div>
         </section>

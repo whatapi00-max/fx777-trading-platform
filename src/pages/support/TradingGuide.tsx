@@ -146,10 +146,10 @@ const TradingGuide = () => {
           <h2 className="text-2xl font-bold mb-3">Ready to put your knowledge to use?</h2>
           <p className="text-primary-100 mb-6 text-sm">Open a free account and start trading with confidence.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link to="/contact" className="bg-white text-primary-700 font-bold px-7 py-3 rounded-xl text-sm hover:bg-gray-50 transition-colors">
+            <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" className="bg-white text-primary-700 font-bold px-7 py-3 rounded-xl text-sm hover:bg-gray-50 transition-colors text-center">
               Open Free Account
-            </Link>
-            <Link to="/support/help-center" className="bg-dark-900/30 text-white border border-white/20 font-bold px-7 py-3 rounded-xl text-sm hover:bg-dark-900/50 transition-colors">
+            </a>
+            <Link to="/support/help-center" className="bg-dark-900/30 text-white border border-white/20 font-bold px-7 py-3 rounded-xl text-sm hover:bg-dark-900/50 transition-colors text-center">
               Visit Help Center
             </Link>
           </div>

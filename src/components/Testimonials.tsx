@@ -167,9 +167,9 @@ const Testimonials = () => {
           <p className="text-lg md:text-xl mb-8 text-dark-800">
             Join thousands of traders worldwide and start your FX777 journey today
           </p>
-          <button className="bg-dark-900 text-white px-12 py-5 rounded-xl font-bold text-lg hover:bg-dark-800 transition-all duration-200 transform hover:scale-105 shadow-xl">
+          <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" className="inline-block bg-dark-900 text-white px-12 py-5 rounded-xl font-bold text-lg hover:bg-dark-800 transition-all duration-200 transform hover:scale-105 shadow-xl">
             Open Free Account
-          </button>
+          </a>
         </div>
       </div>
     </section>

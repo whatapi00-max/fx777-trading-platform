@@ -1,32 +1,4 @@
-import { AlertTriangle, Info, ChevronRight } from 'lucide-react'
 import PageLayout from '../../components/Layout/PageLayout'
-
-const disclaimerSections = [
-  {
-    title: 'No Investment Advice',
-    content: 'The information provided on the FX777 platform, including market data, analysis, articles, research reports, and trading signals, is for educational and informational purposes only. It does not constitute financial, investment, legal, or tax advice. FX777 does not recommend buying or selling any specific financial instrument.',
-  },
-  {
-    title: 'Past Performance',
-    content: 'Past performance of any financial instrument, trading strategy, or investment product is not indicative of future results. All examples shown on the Platform are for illustrative purposes only. Actual results may vary significantly.',
-  },
-  {
-    title: 'Third-Party Content',
-    content: 'The Platform may display content, research, or information from third-party sources. FX777 does not endorse or guarantee the accuracy of third-party content. Users should independently verify any information before making trading decisions.',
-  },
-  {
-    title: 'Market Data Accuracy',
-    content: 'While we strive to provide accurate real-time market data, FX777 does not guarantee the accuracy, completeness, or timeliness of market data. There may be occasional delays or inaccuracies due to factors beyond our control, including exchange delays or technical issues.',
-  },
-  {
-    title: 'Availability of Service',
-    content: 'FX777 does not guarantee uninterrupted access to the Platform. The service may be temporarily unavailable due to maintenance, technical issues, regulatory requirements, or force majeure events. We are not liable for losses arising from service interruptions.',
-  },
-  {
-    title: 'Limitation of Liability',
-    content: 'To the maximum extent permitted by applicable law, FX777 shall not be liable for any direct, indirect, incidental, special, or consequential damages arising from the use or inability to use the Platform, including trading losses, loss of data, or business interruption.',
-  },
-]
 
 const Disclaimer = () => {
   return (
@@ -35,56 +7,119 @@ const Disclaimer = () => {
       breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Legal' }, { name: 'Disclaimer' }]}
       description="Important disclaimers regarding FX777's services, content, and market information."
     >
-      <div className="space-y-10">
-        {/* Regulatory disclaimer */}
-        <div className="bg-amber-50 border border-amber-300 rounded-xl p-6">
-          <div className="flex items-start gap-3">
-            <AlertTriangle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" />
-            <div>
-              <h2 className="text-base font-bold text-amber-900 mb-2">SEBI Mandatory Disclosure</h2>
-              <p className="text-sm text-amber-800 leading-relaxed">
-                Investments in securities market are subject to market risks. Read all the related documents carefully before investing.
-                FX777 is a SEBI-registered broker. Registration does not imply a certain level of skill or training.
-                As per a SEBI study, approximately 70-80% of individual traders in the equity F&O segment incurred net losses.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 flex items-start gap-3">
-          <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-          <p className="text-sm text-blue-800">
-            This disclaimer should be read in conjunction with our <strong>Terms &amp; Conditions</strong>, <strong>Risk Disclosure</strong>, 
-            and <strong>Privacy Policy</strong>. By using the FX777 Platform, you acknowledge that you have read and understood these disclaimers.
+      <div className="space-y-8">
+        <div className="bg-primary-50 border border-primary-200 rounded-xl p-6">
+          <p className="text-sm text-gray-600 leading-relaxed">
+            <strong>Last updated: January 1, 2026.</strong> Please read this disclaimer carefully before using the FX777 platform.
           </p>
         </div>
 
-        <div className="space-y-5">
-          {disclaimerSections.map(({ title, content }) => (
-            <div key={title} className="bg-white border border-gray-100 rounded-xl p-6">
-              <h3 className="text-base font-bold text-dark-900 mb-3 flex items-start gap-2">
-                <ChevronRight className="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5" />
-                {title}
-              </h3>
-              <p className="text-sm text-gray-600 leading-relaxed pl-6">{content}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="bg-dark-900 text-white rounded-xl p-6">
-          <h2 className="font-bold text-lg mb-2">Grievance Redressal</h2>
-          <p className="text-gray-300 text-sm mb-4">
-            For any queries, grievances, or complaints, please contact our Grievance Officer. We are committed to resolving 
-            all issues within 30 days as required by SEBI regulations.
-          </p>
-          <div className="text-sm text-gray-300 space-y-1">
-            <p><strong className="text-white">Grievance Officer:</strong> [Name, Designation]</p>
-            <p><strong className="text-white">Email:</strong> grievance@fx777.com</p>
-            <p><strong className="text-white">Phone:</strong> +91 XXXX XXX XXX</p>
-            <p className="mt-3 text-xs text-gray-400">
-              If not resolved, you may escalate to SEBI SCORES at scores.gov.in
+        <div className="bg-white border border-gray-100 rounded-xl p-8 space-y-6">
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">Interpretation and Definitions</h2>
+            <h3 className="text-lg font-semibold text-dark-900 mb-3">Interpretation</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
             </p>
-          </div>
+          </section>
+
+          <section>
+            <h3 className="text-lg font-semibold text-dark-900 mb-3">Definitions</h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">For the purposes of this Disclaimer:</p>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li>• <strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Disclaimer) refers to FX777.</li>
+              <li>• <strong>Service</strong> refers to the Website.</li>
+              <li>• <strong>You</strong> means the individual accessing the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
+              <li>• <strong>Website</strong> refers to FX777, accessible from https://www.fx777.in/</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">Disclaimer</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              The information contained on the Service is for general information purposes only.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              The Company assumes no responsibility for errors or omissions in the contents of the Service.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              In no event shall the Company be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort, arising out of or in connection with the use of the Service or the contents of the Service. The Company reserves the right to make additions, deletions, or modifications to the contents on the Service at any time without prior notice.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              The Company does not warrant that the Service is free of viruses or other harmful components.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">External Links Disclaimer</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              The Service may contain links to external websites that are not provided or maintained by or in any way affiliated with the Company.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Please note that the Company does not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">Errors and Omissions Disclaimer</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              The information given by the Service is for general guidance on matters of interest only. Even if the Company takes every precaution to ensure that the content of the Service is both current and accurate, errors can occur. Plus, given the changing nature of laws, rules and regulations, there may be delays, omissions or inaccuracies in the information contained on the Service.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              The Company is not responsible for any errors or omissions, or for the results obtained from the use of this information.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">Fair Use Disclaimer</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              The Company may use copyrighted material which has not always been specifically authorized by the copyright owner. The Company is making such material available for criticism, comment, news reporting, teaching, scholarship, or research.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              The Company believes this constitutes a "fair use" of any such copyrighted material as provided for in section 107 of the United States Copyright law.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              If You wish to use copyrighted material from the Service for your own purposes that go beyond fair use, You must obtain permission from the copyright owner.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">Views Expressed Disclaimer</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              The Service may contain views and opinions which are those of the authors and do not necessarily reflect the official policy or position of any other author, agency, organization, employer or company, including the Company.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Comments published by users are their sole responsibility and the users will take full responsibility, liability and blame for any libel or litigation that results from something written in or as a direct result of something written in a comment. The Company is not liable for any comment published by users and reserves the right to delete any comment for any reason whatsoever.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">No Responsibility Disclaimer</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              The information on the Service is provided with the understanding that the Company is not herein engaged in rendering legal, accounting, tax, or other professional advice and services. As such, it should not be used as a substitute for consultation with professional accounting, tax, legal or other competent advisers.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              In no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever arising out of or in connection with your access or use or inability to access or use the Service.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">"Use at Your Own Risk" Disclaimer</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              All information in the Service is provided "as is", with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information, and without warranty of any kind, express or implied, including, but not limited to warranties of performance, merchantability and fitness for a particular purpose.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              The Company will not be liable to You or anyone else for any decision made or action taken in reliance on the information given by the Service or for any consequential, special or similar damages, even if advised of the possibility of such damages.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">Contact Us</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              If you have any questions about this Disclaimer, You can contact Us:
+            </p>
+            <p className="text-gray-600 text-sm font-semibold">By email: support@fx777.in</p>
+          </section>
         </div>
       </div>
     </PageLayout>

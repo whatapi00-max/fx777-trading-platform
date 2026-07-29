@@ -1,74 +1,4 @@
-import { Link } from 'react-router-dom'
-import { Shield, Eye, Database, Lock, UserCheck, Bell, ChevronRight } from 'lucide-react'
 import PageLayout from '../../components/Layout/PageLayout'
-
-const sections = [
-  {
-    Icon: Database,
-    title: 'Information We Collect',
-    content: [
-      'Personal identification information (name, email address, phone number, date of birth)',
-      'Financial information (bank account details, PAN card, Aadhaar card)',
-      'Trading activity and transaction history',
-      'Device information and IP address for security purposes',
-      'KYC documents as required by regulatory authorities',
-    ],
-  },
-  {
-    Icon: Eye,
-    title: 'How We Use Your Information',
-    content: [
-      'To open and maintain your trading and demat account',
-      'To process transactions and provide trading services',
-      'To comply with legal and regulatory requirements',
-      'To send important account notifications and updates',
-      'To improve our platform and customer service',
-      'To detect and prevent fraud or unauthorised activity',
-    ],
-  },
-  {
-    Icon: Shield,
-    title: 'Data Security',
-    content: [
-      'All data is encrypted using 256-bit SSL/TLS encryption',
-      'We follow RBI and SEBI guidelines for data protection',
-      'Regular security audits and penetration testing',
-      'Two-factor authentication is available for all accounts',
-      'Data stored on secure, ISO 27001 certified servers in India',
-    ],
-  },
-  {
-    Icon: UserCheck,
-    title: 'Sharing of Information',
-    content: [
-      'We do not sell your personal information to third parties',
-      'Information may be shared with SEBI, NSE, BSE, and other regulators as required by law',
-      'We may share data with depository participants (NSDL/CDSL)',
-      'Service providers who help operate our platform are bound by confidentiality agreements',
-    ],
-  },
-  {
-    Icon: Bell,
-    title: 'Your Rights',
-    content: [
-      'Right to access the personal data we hold about you',
-      'Right to correct inaccurate or incomplete data',
-      'Right to request deletion of your data (subject to regulatory obligations)',
-      'Right to opt out of marketing communications at any time',
-      'Right to data portability where technically feasible',
-    ],
-  },
-  {
-    Icon: Lock,
-    title: 'Cookies and Tracking',
-    content: [
-      'We use cookies to enhance your browsing experience and remember preferences',
-      'Analytics cookies help us understand how users interact with our platform',
-      'You can control cookie settings through your browser',
-      'Disabling certain cookies may affect platform functionality',
-    ],
-  },
-]
 
 const PrivacyPolicy = () => {
   return (
@@ -77,7 +7,7 @@ const PrivacyPolicy = () => {
       breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Legal' }, { name: 'Privacy Policy' }]}
       description="How FX777 collects, uses, and protects your personal information."
     >
-      <div className="space-y-10">
+      <div className="space-y-8">
         <div className="bg-primary-50 border border-primary-200 rounded-xl p-6">
           <p className="text-sm text-gray-600 leading-relaxed">
             <strong className="text-dark-900">Last updated: January 1, 2026.</strong> This Privacy Policy explains how FX777 
@@ -86,42 +16,330 @@ const PrivacyPolicy = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {sections.map(({ Icon, title, content }) => (
-            <div key={title} className="bg-white border border-gray-100 rounded-xl p-6 hover:border-primary-200 hover:shadow-sm transition-all">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-primary-600" />
-                </div>
-                <h2 className="text-lg font-bold text-dark-900">{title}</h2>
-              </div>
-              <ul className="space-y-2">
-                {content.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                    <ChevronRight className="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        <div className="bg-white border border-gray-100 rounded-xl p-8 space-y-6">
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">1. Introduction</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              Welcome to FX777. FX777 (&ldquo;us&rdquo;, &ldquo;we&rdquo;, or &ldquo;our&rdquo;) operates FX777.in (hereinafter referred to as &ldquo;Service&rdquo;).
+              Our Privacy Policy governs your visit to FX777.in, and explains how we collect, safeguard and disclose information that results from your use of our Service.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              We use your data to provide and improve Service. By using Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Our Terms and Conditions (&ldquo;Terms&rdquo;) govern all use of our Service and together with the Privacy Policy constitutes your agreement with us (&ldquo;agreement&rdquo;).
+            </p>
+          </section>
 
-        <div className="bg-white border border-gray-100 rounded-xl p-6">
-          <h2 className="text-xl font-bold text-dark-900 mb-3">Contact Us</h2>
-          <p className="text-gray-600 text-sm mb-4">
-            For any privacy-related queries or concerns, please contact our Data Protection Officer:
-          </p>
-          <div className="text-sm text-gray-600 space-y-1">
-            <p><strong>Email:</strong> privacy@fx777.com</p>
-            <p><strong>Address:</strong> FX777 Financial Services Pvt. Ltd., Mumbai, Maharashtra, India</p>
-            <p><strong>Phone:</strong> +91 XXXX XXX XXX</p>
-          </div>
-          <div className="mt-5">
-            <Link to="/contact" className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-colors">
-              Contact Us
-            </Link>
-          </div>
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">2. Definitions</h2>
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li><strong>SERVICE</strong> means the FX777.in website operated by FX777.</li>
+              <li><strong>PERSONAL DATA</strong> means data about a living individual who can be identified from those data (or from those and other information either in our possession or likely to come into our possession).</li>
+              <li><strong>USAGE DATA</strong> is data collected automatically either generated by the use of Service or from Service infrastructure itself (for example, the duration of a page visit).</li>
+              <li><strong>COOKIES</strong> are small files stored on your device (computer or mobile device).</li>
+              <li><strong>DATA CONTROLLER</strong> means a natural or legal person who (either alone or jointly or in common with other persons) determines the purposes for which and the manner in which any personal data are, or are to be, processed. For the purpose of this Privacy Policy, we are a Data Controller of your data.</li>
+              <li><strong>DATA PROCESSORS (OR SERVICE PROVIDERS)</strong> means any natural or legal person who processes the data on behalf of the Data Controller. We may use the services of various Service Providers in order to process your data more effectively.</li>
+              <li><strong>DATA SUBJECT</strong> is any living individual who is the subject of Personal Data.</li>
+              <li><strong>THE USER</strong> is the individual using our Service. The User corresponds to the Data Subject, who is the subject of Personal Data.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">3. Information Collection and Use</h2>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              We collect several different types of information for various purposes to provide and improve our Service to you.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">4. Types of Data Collected</h2>
+            <h3 className="text-lg font-semibold text-dark-900 mb-3">Personal Data</h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you (&ldquo;Personal Data&rdquo;). Personally identifiable information may include, but is not limited to:
+            </p>
+            <ul className="space-y-2 text-sm text-gray-600 mb-4">
+              <li>• Email address</li>
+              <li>• First name and last name</li>
+              <li>• Phone number</li>
+              <li>• Address, Country, State, Province, ZIP/Postal code, City</li>
+              <li>• Cookies and Usage Data</li>
+            </ul>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              We may use your Personal Data to contact you with newsletters, marketing or promotional materials and other information that may be of interest to you. You may opt out of receiving any, or all, of these communications from us by following the unsubscribe link.
+            </p>
+
+            <h3 className="text-lg font-semibold text-dark-900 mb-3">Usage Data</h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              We may also collect information that your browser sends whenever you visit our Service or when you access Service by or through any device (&ldquo;Usage Data&rdquo;).
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              When you access Service with a device, this Usage Data may include information such as the type of device you use, your device unique ID, the IP address of your device, your device operating system, the type of Internet browser you use, unique device identifiers and other diagnostic data.
+            </p>
+
+            <h3 className="text-lg font-semibold text-dark-900 mb-3">Tracking Cookies Data</h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              We use cookies and similar tracking technologies to track the activity on our Service and we hold certain information. Cookies are files with a small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Other tracking technologies are also used such as beacons, tags and scripts to collect and track information and to improve and analyze our Service.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">Examples of Cookies we use:</p>
+            <ul className="space-y-2 text-sm text-gray-600 mb-4">
+              <li>• Session Cookies: We use Session Cookies to operate our Service.</li>
+              <li>• Preference Cookies: We use Preference Cookies to remember your preferences and various settings.</li>
+              <li>• Security Cookies: We use Security Cookies for security purposes.</li>
+              <li>• Advertising Cookies: Advertising Cookies are used to serve you with advertisements that may be relevant to you and your interests.</li>
+            </ul>
+
+            <h3 className="text-lg font-semibold text-dark-900 mb-3">Other Data</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              While using our Service, we may also collect the following information: sex, age, date of birth, place of birth, passport details, citizenship, registration at place of residence and actual address, telephone number (work, mobile), details of documents on education, qualification, professional training, employment agreements, information on bonuses and compensation, information on marital status, family members, social security (or other taxpayer identification) number, office location and other data.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">5. Use of Data</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">FX777 uses the collected data for various purposes:</p>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li>• to provide and maintain our Service;</li>
+              <li>• to notify you about changes to our Service;</li>
+              <li>• to allow you to participate in interactive features of our Service when you choose to do so;</li>
+              <li>• to provide customer support;</li>
+              <li>• to gather analysis or valuable information so that we can improve our Service;</li>
+              <li>• to monitor the usage of our Service;</li>
+              <li>• to detect, prevent and address technical issues;</li>
+              <li>• to fulfil any other purpose for which you provide it;</li>
+              <li>• to carry out our obligations and enforce our rights arising from any contracts entered into between you and us, including for billing and collection;</li>
+              <li>• to provide you with notices about your account and/or subscription, including expiration and renewal notices, email-instructions, etc.;</li>
+              <li>• to provide you with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless you have opted not to receive such information;</li>
+              <li>• in any other way we may describe when you provide the information;</li>
+              <li>• for any other purpose with your consent.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">6. Retention of Data</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              We will retain your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              We will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period, except when this data is used to strengthen the security or to improve the functionality of our Service, or we are legally obligated to retain this data for longer time periods.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">7. Transfer of Data</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              Your information, including Personal Data, may be transferred to – and maintained on computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              If you are located outside India and choose to provide information to us, please note that we transfer the data, including Personal Data, to India and process it there.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              FX777 will take all the steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organisation or a country unless there are adequate controls in place including the security of your data and other personal information.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">8. Disclosure of Data</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">We may disclose personal information that we collect, or you provide:</p>
+            <ul className="space-y-2 text-sm text-gray-600 mb-4">
+              <li>• <strong>Business Transaction.</strong> If we or our subsidiaries are involved in a merger, acquisition or asset sale, your Personal Data may be transferred.</li>
+              <li>• <strong>Other cases.</strong> We may disclose your information also:</li>
+            </ul>
+            <ul className="space-y-2 text-sm text-gray-600 mb-4">
+              <li>• to our subsidiaries and affiliates;</li>
+              <li>• to contractors, service providers, and other third parties we use to support our business;</li>
+              <li>• to fulfill the purpose for which you provide it;</li>
+              <li>• for the purpose of including your company's logo on our website;</li>
+              <li>• for any other purpose disclosed by us when you provide the information;</li>
+              <li>• with your consent in any other cases;</li>
+              <li>• if we believe disclosure is necessary or appropriate to protect the rights, property, or safety of the Company, our customers, or others.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">9. Security of Data</h2>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              The security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">10. Your Data Protection Rights Under General Data Protection Regulation (GDPR)</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              If you are a resident of the European Union (EU) and European Economic Area (EEA), you have certain data protection rights, covered by GDPR.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              We aim to take reasonable steps to allow you to correct, amend, delete, or limit the use of your Personal Data.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              If you wish to be informed what Personal Data we hold about you and if you want it to be removed from our systems, please email us at support@fx777.in.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">In certain circumstances, you have the following data protection rights:</p>
+            <ul className="space-y-2 text-sm text-gray-600 mb-4">
+              <li>• the right to access, update or to delete the information we have on you;</li>
+              <li>• the right of rectification. You have the right to have your information rectified if that information is inaccurate or incomplete;</li>
+              <li>• the right to object. You have the right to object to our processing of your Personal Data;</li>
+              <li>• the right of restriction. You have the right to request that we restrict the processing of your personal information;</li>
+              <li>• the right to data portability. You have the right to be provided with a copy of your Personal Data in a structured, machine-readable and commonly used format;</li>
+              <li>• the right to withdraw consent. You also have the right to withdraw your consent at any time where we rely on your consent to process your personal information;</li>
+            </ul>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              Please note that we may ask you to verify your identity before responding to such requests.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              Please note, we may not able to provide Service without some necessary data.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              You have the right to complain to a Data Protection Authority about our collection and use of your Personal Data. For more information, please contact your local data protection authority in the European Economic Area (EEA).
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">11. Your Data Protection Rights under the California Privacy Protection Act (CalOPPA)</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              CalOPPA is the first state law in the nation to require commercial websites and online services to post a privacy policy. The law's reach stretches well beyond California to require a person or company in the United States (and conceivable the world) that operates websites collecting personally identifiable information from California consumers to post a conspicuous privacy policy on its website stating exactly the information being collected and those individuals with whom it is being shared, and to comply with this policy.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">According to CalOPPA we agree to the following:</p>
+            <ul className="space-y-2 text-sm text-gray-600 mb-4">
+              <li>• users can visit our site anonymously;</li>
+              <li>• our Privacy Policy link includes the word &ldquo;Privacy&rdquo;, and can easily be found on the home page of our website;</li>
+              <li>• users will be notified of any privacy policy changes on our Privacy Policy Page;</li>
+              <li>• users are able to change their personal information by emailing us at support@fx777.in.</li>
+            </ul>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">Our Policy on &ldquo;Do Not Track&rdquo; Signals:</p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              We honor Do Not Track signals and do not track, plant cookies, or use advertising when a Do Not Track browser mechanism is in place. Do Not Track is a preference you can set in your web browser to inform websites that you do not want to be tracked.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              You can enable or disable Do Not Track by visiting the Preferences or Settings page of your web browser.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">12. Your Data Protection Rights under the California Consumer Privacy Act (CCPA)</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              If you are a California resident, you are entitled to learn what data we collect about you, ask to delete your data and not to sell (share) it. To exercise your data protection rights, you can make certain requests and ask us:
+            </p>
+            <ul className="space-y-2 text-sm text-gray-600 mb-4">
+              <li>• <strong>What personal information we have about you.</strong> If you make this request, we will return to you:</li>
+            </ul>
+            <ul className="space-y-2 text-sm text-gray-600 mb-4 pl-6">
+              <li>• The categories of personal information we have collected about you.</li>
+              <li>• The categories of sources from which we collect your personal information.</li>
+              <li>• The business or commercial purpose for collecting or selling your personal information.</li>
+              <li>• The categories of third parties with whom we share personal information.</li>
+              <li>• The specific pieces of personal information we have collected about you.</li>
+              <li>• A list of categories of personal information that we have sold, along with the category of any other company we sold it to. If we have not sold your personal information, we will inform you of that fact.</li>
+              <li>• A list of categories of personal information that we have disclosed for a business purpose, along with the category of any other company we shared it with.</li>
+            </ul>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              Please note, you are entitled to ask us to provide you with this information up to two times in a rolling twelve-month period. When you make this request, the information provided may be limited to the personal information we collected about you in the previous 12 months.
+            </p>
+            <ul className="space-y-2 text-sm text-gray-600 mb-4">
+              <li>• <strong>To delete your personal information.</strong> If you make this request, we will delete the personal information we hold about you as of the date of your request from our records and direct any service providers to do the same. In some cases, deletion may be accomplished through de identification of the information. If you choose to delete your personal information, you may not be able to use certain functions that require your personal information to operate.</li>
+              <li>• <strong>To stop selling your personal information.</strong> We don't sell or rent your personal information to any third parties for any purpose. We do not sell your personal information for monetary consideration. However, under some circumstances, a transfer of personal information to a third party, or within our family of companies, without monetary consideration may be considered a &ldquo;sale&rdquo; under California law. You are the only owner of your Personal Data and can request disclosure or deletion at any time.</li>
+            </ul>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              If you submit a request to stop selling your personal information, we will stop making such transfers.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              us, and you may not be able to participate in certain programs or membership services which require the usage of your personal information to function. But in no circumstances, we will discriminate against you for exercising your rights.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              To exercise your California data protection rights described above, please send your request(s) by email: support@fx777.in.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Your data protection rights, described above, are covered by the CCPA, short for the California Consumer Privacy Act. To find out more, visit the official California Legislative Information website. The CCPA took effect on 01/01/2020.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">13. Service Providers</h2>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              We may employ third party companies and individuals to facilitate our Service (&ldquo;Service Providers&rdquo;), provide Service on our behalf, perform Service-related services or assist us in analysing how our Service is used. These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">14. Analytics</h2>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              We may use third-party Service Providers to monitor and analyze the use of our Service.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">15. CI/CD tools</h2>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              We may use third-party Service Providers to automate the development process of our Service.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">16. Behavioral Remarketing</h2>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              We may use remarketing services to advertise on third party websites to you after you visited our Service. We and our third-party vendors use cookies to inform, optimise and serve ads based on your past visits to our Service.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">17. Payments</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              We may provide paid products and/or services within Service. In that case, we use third-party services for payment processing (e.g. payment processors).
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              We will not store or collect your payment card details. That information is provided directly to our third-party payment processors whose use of your personal information is governed by their Privacy Policy. These payment processors adhere to the standards set by PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, Mastercard, American Express and Discover. PCI-DSS requirements help ensure the secure handling of payment information.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">18. Links to Other Sites</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              Our Service may contain links to other sites that are not operated by us. If you click a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">19. Children's Privacy</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              Our Services are not intended for use by children under the age of 18 (&ldquo;Child&rdquo; or &ldquo;Children&rdquo;).
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              We do not knowingly collect personally identifiable information from Children under 18. If you become aware that a Child has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from Children without verification of parental consent, we take steps to remove that information from our servers.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">20. Changes to This Privacy Policy</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              We will let you know via email and/or a prominent notice on our Service, prior to the change becoming effective and update &ldquo;effective date&rdquo; at the top of this Privacy Policy.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-dark-900 mb-4">21. Contact Us</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              If you have any questions about this Privacy Policy, please contact us by email:
+            </p>
+            <p className="text-gray-600 text-sm font-semibold">support@fx777.in</p>
+          </section>
         </div>
       </div>
     </PageLayout>

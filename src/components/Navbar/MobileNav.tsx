@@ -61,12 +61,7 @@ const MobileNav = ({ id, items, isOpen, onClose }: MobileNavProps) => {
         {/* Header — logo only, no X button */}
         <div className="flex items-center px-5 border-b border-gray-100 flex-shrink-0" style={{ height: '4rem' }}>
           <Link to="/" className="flex items-center space-x-2" onClick={onClose}>
-            <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold">FX</span>
-            </div>
-            <span className="text-xl font-bold text-dark-900">
-              FX<span className="text-primary-500">777</span>
-            </span>
+            <img src="/logo.png" alt="FX777 Logo" className="h-8 w-auto" />
           </Link>
         </div>
 

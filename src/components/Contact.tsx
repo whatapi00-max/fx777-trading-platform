@@ -1,12 +1,42 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import { Mail, Phone, Send } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const Contact = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
+  const [result, setResult] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setIsSubmitting(true)
+    setResult("")
+
+    const formData = new FormData(event.currentTarget)
+    formData.append("access_key", "4873def8-5c9e-4e01-b341-8d52b5387309")
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      })
+
+      const data = await response.json()
+      if (data.success) {
+        setResult("Message sent successfully!")
+        event.currentTarget.reset()
+      } else {
+        setResult("Error sending message. Please try again.")
+      }
+    } catch (error) {
+      setResult("Error sending message. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -36,14 +66,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'support@fx777.com',
+      details: 'support@fx777.in',
       subdetails: 'We reply within 24 hours',
-    },
-    {
-      icon: MapPin,
-      title: 'Visit Us',
-      details: 'Mumbai, Maharashtra',
-      subdetails: 'India - 400001',
     },
   ]
 
@@ -59,7 +83,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
           {contactInfo.map((info, index) => (
             <div
               key={index}
@@ -71,15 +95,13 @@ const Contact = () => {
               {/* Premium top accent */}
               <div className={`absolute top-0 left-8 right-8 h-1 bg-gradient-to-r ${
                 index === 0 ? 'from-blue-400 to-blue-600' : 
-                index === 1 ? 'from-green-400 to-green-600' : 
-                'from-purple-400 to-purple-600'
+                'from-green-400 to-green-600'
               } opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
               
               <div className="relative z-10 text-center">
                 <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${
                   index === 0 ? 'from-blue-400 to-blue-600' : 
-                  index === 1 ? 'from-green-400 to-green-600' : 
-                  'from-purple-400 to-purple-600'
+                  'from-green-400 to-green-600'
                 } rounded-2xl mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110`}>
                   <info.icon className="text-white" size={28} />
                 </div>
@@ -110,7 +132,7 @@ const Contact = () => {
             <p className="text-center text-sm text-gray-500 mb-8 border-t pt-8">
               Or send us a message below for any questions
             </p>
-          <form className="space-y-6">
+          <form onSubmit={onSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-semibold text-dark-700 mb-2">
@@ -118,6 +140,8 @@ const Contact = () => {
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  required
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:outline-none transition-colors"
                   placeholder="Enter your name"
                 />
@@ -128,6 +152,7 @@ const Contact = () => {
                 </label>
                 <input
                   type="tel"
+                  name="phone"
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:outline-none transition-colors"
                   placeholder="+91 XXXXX XXXXX"
                 />
@@ -140,6 +165,8 @@ const Contact = () => {
               </label>
               <input
                 type="email"
+                name="email"
+                required
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:outline-none transition-colors"
                 placeholder="your.email@example.com"
               />
@@ -147,20 +174,33 @@ const Contact = () => {
 
             <div>
               <label className="block text-sm font-semibold text-dark-700 mb-2">
-                Message
+                Message *
               </label>
               <textarea
+                name="message"
+                required
                 rows={4}
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:outline-none transition-colors resize-none"
                 placeholder="Tell us about your trading experience..."
               />
             </div>
 
+            {result && (
+              <div className={`p-4 rounded-lg text-center ${
+                result.includes("success") 
+                  ? "bg-green-50 text-green-700 border border-green-200" 
+                  : "bg-red-50 text-red-700 border border-red-200"
+              }`}>
+                {result}
+              </div>
+            )}
+
             <button
               type="submit"
-              className="w-full bg-primary-500 hover:bg-primary-600 text-dark-900 font-bold px-8 py-4 rounded-xl text-lg transition-all duration-200 transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg"
+              disabled={isSubmitting}
+              className="w-full bg-primary-500 hover:bg-primary-600 text-dark-900 font-bold px-8 py-4 rounded-xl text-lg transition-all duration-200 transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
-              Submit Request
+              {isSubmitting ? "Sending..." : "Submit Request"}
               <Send size={20} />
             </button>
 

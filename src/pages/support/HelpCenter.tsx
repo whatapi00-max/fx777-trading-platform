@@ -108,7 +108,7 @@ const HelpCenter = () => {
             <ChevronRight className="w-4 h-4 text-primary-500 ml-auto group-hover:translate-x-1 transition-transform" />
           </Link>
           <a
-            href="mailto:support@fx777.com"
+            href="mailto:support@fx777.in"
             className="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-xl p-4 hover:border-primary-200 hover:bg-primary-50 transition-colors group"
           >
             <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -116,7 +116,7 @@ const HelpCenter = () => {
             </div>
             <div>
               <p className="font-bold text-dark-900 text-sm">Email Support</p>
-              <p className="text-xs text-gray-500">support@fx777.com</p>
+              <p className="text-xs text-gray-500">support@fx777.in</p>
             </div>
             <ChevronRight className="w-4 h-4 text-gray-400 ml-auto group-hover:translate-x-1 transition-transform" />
           </a>

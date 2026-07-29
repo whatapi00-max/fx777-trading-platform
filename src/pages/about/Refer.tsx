@@ -48,8 +48,8 @@ const Refer = () => {
             <h3 className="text-2xl md:text-3xl font-bold text-dark-900 mb-4">Start Referring Today</h3>
             <p className="text-dark-800 mb-6 max-w-2xl mx-auto">Share the benefits of FX777 with your friends and earn rewards</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white hover:bg-gray-100 text-primary-600 font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg">Get Referral Link</button>
-              <button className="bg-dark-900 hover:bg-dark-800 text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg">View Terms</button>
+              <a href="https://fx777crm.theplatformapi.com/auth-pages/login" target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-gray-100 text-primary-600 font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg text-center">Get Referral Link</a>
+              <a href="/legal/terms-conditions" className="bg-dark-900 hover:bg-dark-800 text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg text-center">View Terms</a>
             </div>
           </div>
         </section>

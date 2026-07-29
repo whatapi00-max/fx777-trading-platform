@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
 import Home from './pages/Home'
 import NSE from './pages/markets/NSE'
 import Commodity from './pages/markets/Commodity'
@@ -23,9 +24,7 @@ import ContactPage from './pages/ContactPage'
 // Legal pages
 import PrivacyPolicy from './pages/legal/PrivacyPolicy'
 import TermsConditions from './pages/legal/TermsConditions'
-import RiskDisclosure from './pages/legal/RiskDisclosure'
-import AMLPolicy from './pages/legal/AMLPolicy'
-import KYCPolicy from './pages/legal/KYCPolicy'
+import RiskWarning from './pages/legal/RiskWarning'
 import CookiePolicy from './pages/legal/CookiePolicy'
 import Disclaimer from './pages/legal/Disclaimer'
 // Support pages
@@ -82,14 +81,13 @@ function AppContent() {
           {/* Legal */}
           <Route path="/legal/privacy-policy"    element={<PrivacyPolicy />} />
           <Route path="/legal/terms-conditions"  element={<TermsConditions />} />
-          <Route path="/legal/risk-disclosure"   element={<RiskDisclosure />} />
-          <Route path="/legal/aml-policy"        element={<AMLPolicy />} />
-          <Route path="/legal/kyc-policy"        element={<KYCPolicy />} />
+          <Route path="/legal/risk-warning"      element={<RiskWarning />} />
           <Route path="/legal/cookie-policy"     element={<CookiePolicy />} />
           <Route path="/legal/disclaimer"        element={<Disclaimer />} />
         </Routes>
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }
