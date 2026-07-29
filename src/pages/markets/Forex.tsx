@@ -7,9 +7,13 @@ import HowItWorks from '../../components/Content/HowItWorks'
 import FAQSection from '../../components/Content/FAQSection'
 import RiskWarning from '../../components/Content/RiskWarning'
 import CTASection from '../../components/Content/CTASection'
+import SEO from '../../components/SEO'
+import { getMetadata } from '../../data/seoMetadata'
 import { TrendingUp, Shield, Globe, Clock } from 'lucide-react'
 
 const Forex = () => {
+  const metadata = getMetadata('forex')
+
   const features = [
     { icon: TrendingUp, title: '24/5 Trading', description: 'Trade forex 24 hours a day, 5 days a week across global markets' },
     { icon: Shield, title: 'Tight Spreads', description: 'Benefit from competitive spreads starting from 0.1 pips on major pairs' },
@@ -84,11 +88,13 @@ const Forex = () => {
   ]
 
   return (
-    <PageLayout
-      title="Forex Trading"
-      breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Markets' }, { name: 'Forex' }]}
-      description="Trade 50+ currency pairs with zero brokerage, up to 200X leverage, and 24/5 market access"
-    >
+    <>
+      <SEO {...metadata} />
+      <PageLayout
+        title="Forex Trading"
+        breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Markets' }, { name: 'Forex' }]}
+        description="Trade 50+ currency pairs with zero brokerage, up to 200X leverage, and 24/5 market access"
+      >
       <div className="space-y-16">
         <FeatureGrid features={features} />
 
@@ -135,7 +141,8 @@ const Forex = () => {
           description="Join thousands of traders who trust FX777 for forex trading. Open your account in minutes and access global currency markets with zero brokerage."
         />
       </div>
-    </PageLayout>
+      </PageLayout>
+    </>
   )
 }
 

@@ -3,11 +3,14 @@ import FeatureGrid from '../../components/Content/FeatureGrid'
 import ContentSection from '../../components/Content/ContentSection'
 import FAQSection from '../../components/Content/FAQSection'
 import CTASection from '../../components/Content/CTASection'
+import SEO from '../../components/SEO'
 import { marketPages } from '../../data/pageContent'
+import { getMetadata } from '../../data/seoMetadata'
 import { TrendingUp, Shield, Zap, Clock } from 'lucide-react'
 
 const NSE = () => {
   const content = marketPages.nse
+  const metadata = getMetadata('nse')
 
   const features = [
     { icon: TrendingUp, title: content.features[0].title, description: content.features[0].description },
@@ -17,7 +20,9 @@ const NSE = () => {
   ]
 
   return (
-    <PageLayout
+    <>
+      <SEO {...metadata} />
+      <PageLayout
         title={content.hero.title}
         breadcrumbs={[
           { name: 'Home', href: '/' },
@@ -54,6 +59,7 @@ const NSE = () => {
           />
         </div>
       </PageLayout>
+    </>
   )
 }
 

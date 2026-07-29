@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+Disallow: /*.json$
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+
+Sitemap: https://www.fx777.in/sitemap.xml
+Sitemap: https://www.fx777.in/sitemap-markets.xml
+Sitemap: https://www.fx777.in/sitemap-support.xml
+Sitemap: https://www.fx777.in/sitemap-legal.xml
+
+# Crawl delay for all bots
+Crawl-delay: 1

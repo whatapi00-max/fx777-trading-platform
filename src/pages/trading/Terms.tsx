@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { FileText, ChevronRight } from 'lucide-react'
 import PageLayout from '../../components/Layout/PageLayout'
+import SEO from '../../components/SEO'
+import { getMetadata } from '../../data/seoMetadata'
 
 const sections = [
   {
@@ -66,8 +68,12 @@ const sections = [
 ]
 
 const Terms = () => {
+  const metadata = getMetadata('terms')
+
   return (
-    <PageLayout
+    <>
+      <SEO {...metadata} />
+      <PageLayout
       title="Terms & Conditions"
       breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Trading' }, { name: 'Terms' }]}
       description="Please read these terms carefully before using the FX777 trading platform."
@@ -105,7 +111,8 @@ const Terms = () => {
           ))}
         </div>
       </div>
-    </PageLayout>
+      </PageLayout>
+    </>
   )
 }
 

@@ -1,7 +1,11 @@
 import PageLayout from '../../components/Layout/PageLayout'
+import SEO from '../../components/SEO'
+import { getMetadata } from '../../data/seoMetadata'
 import { TrendingUp, Shield, Globe, Zap } from 'lucide-react'
 
 const COMEX = () => {
+  const metadata = getMetadata('comex')
+
   const features = [
     { icon: Globe, title: 'Global Markets', description: 'Access international commodity exchanges' },
     { icon: Shield, title: 'Precious Metals', description: 'Trade gold, silver, platinum, and palladium' },
@@ -10,7 +14,9 @@ const COMEX = () => {
   ]
 
   return (
-    <PageLayout
+    <>
+      <SEO {...metadata} />
+      <PageLayout
       title="COMEX Trading"
       breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Markets' }, { name: 'COMEX' }]}
       description="Trade on the Commodity Exchange with access to precious metals and energy futures."
@@ -47,7 +53,8 @@ const COMEX = () => {
           </div>
         </section>
       </div>
-    </PageLayout>
+      </PageLayout>
+    </>
   )
 }
 

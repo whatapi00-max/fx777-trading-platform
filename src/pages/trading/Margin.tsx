@@ -7,9 +7,13 @@ import HowItWorks from '../../components/Content/HowItWorks'
 import FAQSection from '../../components/Content/FAQSection'
 import RiskWarning from '../../components/Content/RiskWarning'
 import CTASection from '../../components/Content/CTASection'
+import SEO from '../../components/SEO'
+import { getMetadata } from '../../data/seoMetadata'
 import { TrendingUp, Shield, Zap, DollarSign } from 'lucide-react'
 
 const Margin = () => {
+  const metadata = getMetadata('margin')
+
   const features = [
     { icon: TrendingUp, title: 'Up to 500X Leverage', description: 'Trade with maximum leverage on futures and options for amplified returns' },
     { icon: Shield, title: 'Margin Monitoring', description: 'Real-time margin tracking with automatic alerts and margin call protection' },
@@ -80,7 +84,9 @@ const Margin = () => {
   ]
 
   return (
-    <PageLayout
+    <>
+      <SEO {...metadata} />
+      <PageLayout
       title="Margin Trading"
       breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Trading' }, { name: 'Margin' }]}
       description="Amplify your trading power with margin up to 500X. Trade larger positions with less capital using leverage on stocks, futures, and commodities."
@@ -176,7 +182,8 @@ const Margin = () => {
           description="Open your account and access margin trading with leverage up to 500X across multiple markets"
         />
       </div>
-    </PageLayout>
+      </PageLayout>
+    </>
   )
 }
 

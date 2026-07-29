@@ -1,7 +1,11 @@
 import PageLayout from '../../components/Layout/PageLayout'
+import SEO from '../../components/SEO'
+import { getMetadata } from '../../data/seoMetadata'
 import { Bitcoin, Shield, TrendingUp, Clock } from 'lucide-react'
 
 const Crypto = () => {
+  const metadata = getMetadata('crypto')
+
   const features = [
     { icon: Bitcoin, title: 'Major Cryptos', description: 'Trade Bitcoin, Ethereum, and top altcoins' },
     { icon: Shield, title: 'Secure Trading', description: 'Bank-grade security for your crypto trades' },
@@ -10,7 +14,9 @@ const Crypto = () => {
   ]
 
   return (
-    <PageLayout
+    <>
+      <SEO {...metadata} />
+      <PageLayout
       title="Cryptocurrency Trading"
       breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Markets' }, { name: 'Crypto' }]}
       description="Trade Bitcoin, Ethereum, and popular cryptocurrencies 24/7 with advanced trading tools."
@@ -47,7 +53,8 @@ const Crypto = () => {
           </div>
         </section>
       </div>
-    </PageLayout>
+      </PageLayout>
+    </>
   )
 }
 

@@ -7,9 +7,13 @@ import HowItWorks from '../../components/Content/HowItWorks'
 import FAQSection from '../../components/Content/FAQSection'
 import RiskWarning from '../../components/Content/RiskWarning'
 import CTASection from '../../components/Content/CTASection'
+import SEO from '../../components/SEO'
+import { getMetadata } from '../../data/seoMetadata'
 import { Zap, TrendingUp, Shield, Clock } from 'lucide-react'
 
 const Intraday = () => {
+  const metadata = getMetadata('intraday')
+
   const features = [
     { icon: Zap, title: 'Up to 500X Leverage', description: 'Maximize your intraday trading potential with high leverage on futures and options' },
     { icon: TrendingUp, title: 'Zero Brokerage', description: 'Keep 100% of your intraday profits - no commission fees on any trades' },
@@ -80,7 +84,9 @@ const Intraday = () => {
   ]
 
   return (
-    <PageLayout
+    <>
+      <SEO {...metadata} />
+      <PageLayout
       title="Intraday Trading"
       breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Trading' }, { name: 'Intraday' }]}
       description="Master intraday trading with zero brokerage and up to 500X leverage. Trade stocks and futures within the same day with advanced tools and instant execution."
@@ -173,7 +179,8 @@ const Intraday = () => {
           description="Open your FX777 account now and start day trading with zero brokerage and up to 500X leverage"
         />
       </div>
-    </PageLayout>
+      </PageLayout>
+    </>
   )
 }
 

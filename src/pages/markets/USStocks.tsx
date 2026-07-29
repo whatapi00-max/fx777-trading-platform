@@ -7,9 +7,13 @@ import HowItWorks from '../../components/Content/HowItWorks'
 import FAQSection from '../../components/Content/FAQSection'
 import RiskWarning from '../../components/Content/RiskWarning'
 import CTASection from '../../components/Content/CTASection'
+import SEO from '../../components/SEO'
+import { getMetadata } from '../../data/seoMetadata'
 import { TrendingUp, Shield, Globe, DollarSign } from 'lucide-react'
 
 const USStocks = () => {
+  const metadata = getMetadata('usStocks')
+
   const features = [
     { icon: Globe, title: 'NYSE & NASDAQ Access', description: 'Trade stocks from the world\'s largest stock exchanges directly from India' },
     { icon: Shield, title: 'Blue-Chip Companies', description: 'Invest in Apple, Microsoft, Tesla, Amazon, Google, and Fortune 500 companies' },
@@ -80,11 +84,13 @@ const USStocks = () => {
   ]
 
   return (
-    <PageLayout
-      title="US Stocks & Indices"
-      breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Markets' }, { name: 'US Stocks' }]}
-      description="Invest in US stocks and indices from India. Trade Apple, Tesla, Amazon, and 5000+ US companies on NYSE and NASDAQ with fractional shares."
-    >
+    <>
+      <SEO {...metadata} />
+      <PageLayout
+        title="US Stocks & Indices"
+        breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Markets' }, { name: 'US Stocks' }]}
+        description="Invest in US stocks and indices from India. Trade Apple, Tesla, Amazon, and 5000+ US companies on NYSE and NASDAQ with fractional shares."
+      >
       <div className="space-y-16">
         <FeatureGrid features={features} />
 
@@ -173,7 +179,8 @@ const USStocks = () => {
           description="Open your international trading account and access the world's largest stock market from India"
         />
       </div>
-    </PageLayout>
+      </PageLayout>
+    </>
   )
 }
 
