@@ -25,13 +25,19 @@ const Contact = () => {
       })
 
       const data = await response.json()
-      if (data.success) {
+      console.log("Web3Forms response:", data)
+      
+      // Web3Forms returns success: true even if there are issues
+      // Check if the response is successful based on status code
+      if (response.ok) {
         setResult("Message sent successfully!")
         event.currentTarget.reset()
       } else {
-        setResult("Error sending message. Please try again.")
+        console.error("Web3Forms HTTP error:", response.status, data)
+        setResult(data.message || "Error sending message. Please try again.")
       }
     } catch (error) {
+      console.error("Form submission error:", error)
       setResult("Error sending message. Please try again.")
     } finally {
       setIsSubmitting(false)
