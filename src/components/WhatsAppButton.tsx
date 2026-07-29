@@ -1,5 +1,5 @@
 const WhatsAppButton = () => {
-  const whatsappNumber = '911800XXXXXXX' // Replace with actual WhatsApp number
+  const whatsappNumber = '61468251570' // +61 468 251 570
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi%20I%20want%20to%20know%20more%20about%20FX777%20trading`
 
   return (
