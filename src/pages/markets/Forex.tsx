@@ -139,6 +139,7 @@ const Forex = () => {
         <CTASection 
           heading="Start Trading Forex Today"
           description="Join thousands of traders who trust FX777 for forex trading. Open your account in minutes and access global currency markets with zero brokerage."
+          secondaryButtonLink="/support/trading-guide"
         />
       </div>
       </PageLayout>
