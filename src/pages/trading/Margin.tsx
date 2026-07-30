@@ -140,6 +140,23 @@ const Margin = () => {
             ]}
             disclaimer="This example illustrates how leverage amplifies losses. A 10% adverse move would wipe out your entire ₹10,000 capital."
           />
+
+          <TradingExample
+            title="Commodity Margin Example"
+            description="Trading gold futures with leverage:"
+            rows={[
+              { label: 'Your Capital', value: '₹5,000' },
+              { label: 'Leverage', value: '100X' },
+              { label: 'Position Size', value: '₹5,00,000' },
+              { label: 'Commodity', value: 'Gold Mini' },
+              { label: 'Entry Price', value: '₹60,000 per 10g' },
+              { label: 'Exit Price', value: '₹60,500 per 10g' },
+              { label: 'Price Change', value: '+0.83%' },
+              { label: 'Profit', value: '₹4,150', highlight: true },
+              { label: 'Return on Capital', value: '83%', highlight: true },
+            ]}
+            disclaimer="Commodity prices can be volatile. This example shows potential profit - losses can exceed your margin."
+          />
         </div>
 
         <BenefitsList

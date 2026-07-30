@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
 import { FileText, ChevronRight } from 'lucide-react'
 import PageLayout from '../../components/Layout/PageLayout'
+import ContentSection from '../../components/Content/ContentSection'
+import TradingExample from '../../components/Content/TradingExample'
+import BenefitsList from '../../components/Content/BenefitsList'
 import SEO from '../../components/SEO'
 import { getMetadata } from '../../data/seoMetadata'
 
@@ -94,6 +97,75 @@ const Terms = () => {
             </div>
           ))}
         </div>
+
+        <ContentSection heading="Key Trading Terms Explained">
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-bold text-dark-900 mb-1">Margin</h4>
+              <p>The amount of money required to open a leveraged position. For example, with 100X leverage on a ₹1,00,000 position, your margin requirement is ₹1,000.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-dark-900 mb-1">Leverage</h4>
+              <p>A multiplier that lets you control a larger position with smaller capital. 100X leverage means ₹1,000 controls ₹1,00,000 worth of assets.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-dark-900 mb-1">Stop-Loss (SL)</h4>
+              <p>An automatic order that closes your position at a predetermined price to limit losses. It is essential for risk management.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-dark-900 mb-1">Take-Profit (TP)</h4>
+              <p>An automatic order that closes your position when it reaches a target profit level, helping you lock in gains.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-dark-900 mb-1">Auto Square-Off</h4>
+              <p>FX777 automatically closes intraday positions before market close to prevent unintended overnight holdings and additional margin requirements.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-dark-900 mb-1">Order Execution</h4>
+              <p>Orders are executed based on bid and ask prices, not the Last Traded Price (LTP). This ensures transparent execution in live market conditions.</p>
+            </div>
+          </div>
+        </ContentSection>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <TradingExample
+            title="Margin Requirement Example"
+            description="How margin works on FX777:"
+            rows={[
+              { label: 'Trade Value', value: '₹1,00,000' },
+              { label: 'Leverage', value: '100X' },
+              { label: 'Margin Required', value: '₹1,000', highlight: true },
+              { label: 'Remaining Capital', value: '₹99,000' },
+              { label: 'Position Control', value: '₹1,00,000', highlight: true },
+            ]}
+            disclaimer="Margin requirements may change based on market volatility and instrument."
+          />
+
+          <TradingExample
+            title="Auto Square-Off Example"
+            description="Protecting intraday traders:"
+            rows={[
+              { label: 'Position Type', value: 'Intraday Nifty Futures' },
+              { label: 'Entry Time', value: '10:30 AM' },
+              { label: 'Auto Square-Off Time', value: '3:20 PM' },
+              { label: 'Action', value: 'Position closed automatically' },
+              { label: 'Benefit', value: 'No overnight margin penalty', highlight: true },
+            ]}
+            disclaimer="Auto square-off timings are subject to change based on market hours and exchange requirements."
+          />
+        </div>
+
+        <BenefitsList
+          title="Benefits of Clear Trading Terms"
+          benefits={[
+            'Transparent margin and leverage rules help you plan trades better',
+            'Auto square-off protects you from overnight risk and penalties',
+            'Clear order execution rules prevent confusion about fill prices',
+            'Defined crypto holding periods ensure fair profit calculation',
+            'Account restrictions maintain a fair trading environment for all',
+            'Referral bonus terms are clearly explained with no hidden conditions',
+          ]}
+        />
 
         <div className="grid sm:grid-cols-2 gap-4">
           {[

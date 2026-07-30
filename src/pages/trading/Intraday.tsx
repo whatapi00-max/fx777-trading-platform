@@ -141,6 +141,22 @@ const Intraday = () => {
             ]}
             disclaimer="High leverage increases both profit and loss potential. This example shows potential profit - losses can exceed your margin."
           />
+
+          <TradingExample
+            title="Bank Nifty Intraday Example"
+            description="Profiting from banking sector volatility:"
+            rows={[
+              { label: 'Instrument', value: 'Bank Nifty Futures' },
+              { label: 'Lot Size', value: '15 units' },
+              { label: 'Buy Price', value: '₹44,000' },
+              { label: 'Margin Required (500X)', value: '₹1,320' },
+              { label: 'Sell Price', value: '₹44,200' },
+              { label: 'Points Gained', value: '200 points' },
+              { label: 'Profit (15 × 200)', value: '₹3,000', highlight: true },
+              { label: 'Return on Margin', value: '227%', highlight: true },
+            ]}
+            disclaimer="Bank Nifty is highly volatile. This example shows potential profit - losses can exceed your margin if the market moves against you."
+          />
         </div>
 
         <BenefitsList

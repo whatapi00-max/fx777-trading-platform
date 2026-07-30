@@ -52,6 +52,21 @@ const Forex = () => {
     ],
   }
 
+  const tradingExampleData2 = {
+    title: 'USD/INR Trading Example',
+    description: 'Trading the Indian Rupee against the US Dollar:',
+    rows: [
+      { label: 'Currency Pair', value: 'USD/INR' },
+      { label: 'Entry Price', value: '₹83.00' },
+      { label: 'Position Size', value: '1,000 USD' },
+      { label: 'Margin Required (100X)', value: '₹830' },
+      { label: 'Exit Price', value: '₹83.50 (+0.6%)' },
+      { label: 'Price Difference', value: '₹0.50 per USD' },
+      { label: 'Gross Profit', value: '₹500', highlight: true },
+      { label: 'Return on Margin', value: '60%', highlight: true },
+    ],
+  }
+
   const faqs = [
     {
       question: 'What is Forex trading?',
@@ -112,7 +127,10 @@ const Forex = () => {
 
         <HowItWorks title="How to Start Forex Trading" steps={howItWorksSteps} />
 
-        <TradingExample {...tradingExampleData} />
+        <div className="grid md:grid-cols-2 gap-8">
+          <TradingExample {...tradingExampleData} />
+          <TradingExample {...tradingExampleData2} />
+        </div>
         
         <ContentSection heading="Important Disclaimer" variant="highlight">
           <p className="text-sm text-gray-600">

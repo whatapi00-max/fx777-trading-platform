@@ -170,6 +170,27 @@ const USStocks = () => {
           </div>
         </ContentSection>
 
+        <ContentSection heading="US Market Hours & FX777 Support">
+          <h4 className="text-xl font-bold text-dark-900 mb-3">Trading Hours in IST:</h4>
+          <div className="space-y-4">
+            <div>
+              <h5 className="font-bold text-dark-900 mb-1">Regular Market Hours</h5>
+              <p>7:00 PM to 1:30 AM IST (9:30 AM to 4:00 PM EST). This is when NYSE and NASDAQ have the highest liquidity and tightest spreads.</p>
+            </div>
+            <div>
+              <h5 className="font-bold text-dark-900 mb-1">Pre-Market Hours</h5>
+              <p>4:00 PM to 7:00 PM IST (6:00 AM to 9:30 AM EST). Trade before the official market open based on overnight news and earnings.</p>
+            </div>
+            <div>
+              <h5 className="font-bold text-dark-900 mb-1">After-Hours Trading</h5>
+              <p>1:30 AM to 4:30 AM IST (4:00 PM to 7:00 PM EST). React to earnings reports and news released after the market close.</p>
+            </div>
+          </div>
+          <p className="mt-4">
+            FX777 provides 24/7 customer support to assist with account setup, funding, and trading queries. Our platform handles INR-to-USD conversion automatically, so you can focus on building your global portfolio without worrying about currency transfers.
+          </p>
+        </ContentSection>
+
         <RiskWarning points={riskPoints} />
 
         <FAQSection faqs={faqs} />
