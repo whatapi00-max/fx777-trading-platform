@@ -1,4 +1,4 @@
-import { Download, Smartphone } from 'lucide-react'
+import { Download, Smartphone, Monitor, Globe } from 'lucide-react'
 
 const AppDownload = () => {
   return (
@@ -11,7 +11,7 @@ const AppDownload = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* Left side - Content */}
           <div className="text-white space-y-6">
             <div className="inline-flex items-center gap-2 bg-white/20 text-white border border-white/30 rounded-full px-4 py-2 text-sm font-medium w-fit">
@@ -24,7 +24,7 @@ const AppDownload = () => {
             </h2>
 
             <p className="text-lg text-white/90 max-w-md">
-              Download the FX777 mobile app and trade on the go. Access all markets, real-time charts, and manage your portfolio from your smartphone.
+              Access FX777 on any device. Trade instantly from your browser, download the desktop app for a powerful workstation experience, or take the markets with you on mobile.
             </p>
 
             <ul className="space-y-3 text-white/90">
@@ -56,7 +56,39 @@ const AppDownload = () => {
           </div>
 
           {/* Right side - Download buttons */}
-          <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Web Trading */}
+            <a
+              href="https://web.theplatformapi.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-2xl hover:scale-105"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform mb-4">
+                <Globe className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-600 font-medium">Trade on</p>
+                <p className="text-xl font-bold">Web Platform</p>
+              </div>
+            </a>
+
+            {/* Desktop App */}
+            <a
+              href="http://theplatformapi.com/setup/fx777.exe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-2xl hover:scale-105"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-dark-900 to-dark-700 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform mb-4">
+                <Monitor className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-600 font-medium">Download for</p>
+                <p className="text-xl font-bold">Desktop</p>
+              </div>
+            </a>
+
             {/* iOS */}
             <a
               href="https://apps.apple.com/jo/app/osense-trader/id6741929487"
