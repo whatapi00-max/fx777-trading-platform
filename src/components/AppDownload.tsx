@@ -56,7 +56,7 @@ const AppDownload = () => {
           </div>
 
           {/* Right side - Download buttons */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3">
             {/* Web Trading */}
             <a
               href="https://web.theplatformapi.com/"
@@ -128,6 +128,46 @@ const AppDownload = () => {
               <div className="flex-1">
                 <p className="text-sm text-gray-600 font-medium">Get it on</p>
                 <p className="text-2xl font-bold">Google Play</p>
+              </div>
+              <Download className="w-6 h-6 text-primary-500 group-hover:translate-y-1 transition-transform" />
+            </a>
+
+            {/* Demo Web Creator */}
+            <a
+              href="https://web.theplatformapi.com/create-company-user?companyName=FX777&isDemo=true&parentId=29102"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-2xl p-6 flex items-center gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M13 7H7v6h6V7z"/>
+                  <path fillRule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2V2a1 1 0 112 0v1h1a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v1a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1h-2v1a1 1 0 11-2 0v-1H7a2 2 0 01-2-2v-2H4a1 1 0 110-2h1V9H4a1 1 0 110-2h1V5H4a1 1 0 110-2h1V2a2 2 0 012-2h2V1a1 1 0 010-2zm9 6a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd"/>
+                </svg>
+              </div>
+              <div className="flex-1">
+                <p className="text-sm text-gray-600 font-medium">Try Demo</p>
+                <p className="text-2xl font-bold">Web Creator</p>
+              </div>
+              <Download className="w-6 h-6 text-primary-500 group-hover:translate-y-1 transition-transform" />
+            </a>
+
+            {/* Real Web Creator */}
+            <a
+              href="https://web.theplatformapi.com/create-company-user?companyName=FX777&isDemo=false&parentId=29103"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-2xl p-6 flex items-center gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M13 7H7v6h6V7z"/>
+                  <path fillRule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2V2a1 1 0 112 0v1h1a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v1a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1h-2v1a1 1 0 11-2 0v-1H7a2 2 0 01-2-2v-2H4a1 1 0 110-2h1V9H4a1 1 0 110-2h1V5H4a1 1 0 110-2h1V2a2 2 0 012-2h2V1a1 1 0 010-2zm9 6a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd"/>
+                </svg>
+              </div>
+              <div className="flex-1">
+                <p className="text-sm text-gray-600 font-medium">Start Real</p>
+                <p className="text-2xl font-bold">Web Creator</p>
               </div>
               <Download className="w-6 h-6 text-primary-500 group-hover:translate-y-1 transition-transform" />
             </a>
