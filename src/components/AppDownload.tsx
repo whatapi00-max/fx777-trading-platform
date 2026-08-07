@@ -1,6 +1,24 @@
 import { Download, Smartphone, Monitor } from 'lucide-react'
 
 const AppDownload = () => {
+  const handleZipDownload = async () => {
+    try {
+      const response = await fetch('/fx777.zip')
+      const blob = await response.blob()
+      const url = window.URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = 'fx777.zip'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      window.URL.revokeObjectURL(url)
+    } catch (error) {
+      console.error('Download failed:', error)
+      window.open('/fx777.zip', '_blank')
+    }
+  }
+
   return (
     <section className="py-16 md:py-24 bg-gradient-to-r from-primary-500 to-primary-600 relative overflow-hidden">
       {/* Background accent */}
@@ -80,10 +98,9 @@ const AppDownload = () => {
             </a>
 
             {/* Desktop App */}
-            <a
-              href="/fx777.zip"
-              download="fx777.zip"
-              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-xl md:rounded-2xl p-3 md:p-6 flex flex-col md:flex-row items-center gap-2 md:gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+            <button
+              onClick={handleZipDownload}
+              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-xl md:rounded-2xl p-3 md:p-6 flex flex-col md:flex-row items-center gap-2 md:gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105 w-full text-left"
             >
               <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-dark-900 to-dark-700 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                 <Monitor className="w-6 h-6 md:w-8 md:h-8 text-white" />
@@ -93,7 +110,7 @@ const AppDownload = () => {
                 <p className="text-lg md:text-2xl font-bold">Desktop</p>
               </div>
               <Download className="hidden md:block w-5 h-5 md:w-6 md:h-6 text-primary-500 group-hover:translate-y-1 transition-transform flex-shrink-0" />
-            </a>
+            </button>
 
             {/* iOS */}
             <a
