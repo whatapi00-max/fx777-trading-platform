@@ -81,7 +81,7 @@ const AppDownload = () => {
 
             {/* Desktop App */}
             <a
-              href="http://theplatformapi.com/setup/fx777.exe"
+              href="https://theplatformapi.com/setup/fx777.exe"
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-white hover:bg-gray-50 text-dark-900 rounded-xl md:rounded-2xl p-3 md:p-6 flex flex-col md:flex-row items-center gap-2 md:gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
