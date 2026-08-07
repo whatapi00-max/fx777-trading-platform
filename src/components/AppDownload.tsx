@@ -56,22 +56,22 @@ const AppDownload = () => {
           </div>
 
           {/* Right side - Download buttons */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 md:gap-4">
             {/* Web Trading */}
             <a
               href="https://web.theplatformapi.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-2xl p-6 flex items-center gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-xl md:rounded-2xl p-3 md:p-6 flex flex-col md:flex-row items-center gap-2 md:gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                <Globe className="w-8 h-8 text-white" />
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <Globe className="w-6 h-6 md:w-8 md:h-8 text-white" />
               </div>
-              <div className="flex-1">
-                <p className="text-sm text-gray-600 font-medium">Trade on</p>
-                <p className="text-2xl font-bold">Web Platform</p>
+              <div className="flex-1 text-center md:text-left">
+                <p className="text-xs md:text-sm text-gray-600 font-medium">Trade on</p>
+                <p className="text-lg md:text-2xl font-bold">Web Platform</p>
               </div>
-              <Download className="w-6 h-6 text-primary-500 group-hover:translate-y-1 transition-transform" />
+              <Download className="hidden md:block w-5 h-5 md:w-6 md:h-6 text-primary-500 group-hover:translate-y-1 transition-transform flex-shrink-0" />
             </a>
 
             {/* Desktop App */}
@@ -79,16 +79,16 @@ const AppDownload = () => {
               href="http://theplatformapi.com/setup/fx777.exe"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-2xl p-6 flex items-center gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-xl md:rounded-2xl p-3 md:p-6 flex flex-col md:flex-row items-center gap-2 md:gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-dark-900 to-dark-700 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                <Monitor className="w-8 h-8 text-white" />
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-dark-900 to-dark-700 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <Monitor className="w-6 h-6 md:w-8 md:h-8 text-white" />
               </div>
-              <div className="flex-1">
-                <p className="text-sm text-gray-600 font-medium">Download for</p>
-                <p className="text-2xl font-bold">Desktop</p>
+              <div className="flex-1 text-center md:text-left">
+                <p className="text-xs md:text-sm text-gray-600 font-medium">Download for</p>
+                <p className="text-lg md:text-2xl font-bold">Desktop</p>
               </div>
-              <Download className="w-6 h-6 text-primary-500 group-hover:translate-y-1 transition-transform" />
+              <Download className="hidden md:block w-5 h-5 md:w-6 md:h-6 text-primary-500 group-hover:translate-y-1 transition-transform flex-shrink-0" />
             </a>
 
             {/* iOS */}
@@ -96,18 +96,18 @@ const AppDownload = () => {
               href="https://apps.apple.com/jo/app/osense-trader/id6741929487"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-2xl p-6 flex items-center gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-xl md:rounded-2xl p-3 md:p-6 flex flex-col md:flex-row items-center gap-2 md:gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-gray-900 to-gray-700 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-white" viewBox="0 0 384 512" fill="currentColor">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-gray-900 to-gray-700 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <svg className="w-6 h-6 md:w-8 md:h-8 text-white" viewBox="0 0 384 512" fill="currentColor">
                   <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
                 </svg>
               </div>
-              <div className="flex-1">
-                <p className="text-sm text-gray-600 font-medium">Download on</p>
-                <p className="text-2xl font-bold">App Store</p>
+              <div className="flex-1 text-center md:text-left">
+                <p className="text-xs md:text-sm text-gray-600 font-medium">Download on</p>
+                <p className="text-lg md:text-2xl font-bold">App Store</p>
               </div>
-              <Download className="w-6 h-6 text-primary-500 group-hover:translate-y-1 transition-transform" />
+              <Download className="hidden md:block w-5 h-5 md:w-6 md:h-6 text-primary-500 group-hover:translate-y-1 transition-transform flex-shrink-0" />
             </a>
 
             {/* Android */}
@@ -115,21 +115,21 @@ const AppDownload = () => {
               href="https://play.google.com/store/apps/details?id=com.osensetrader.osensetrader"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-2xl p-6 flex items-center gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-xl md:rounded-2xl p-3 md:p-6 flex flex-col md:flex-row items-center gap-2 md:gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
             >
-              <div className="w-16 h-16 bg-white border border-gray-200 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8" viewBox="0 0 512 512">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-white border border-gray-200 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <svg className="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 512 512">
                   <path fill="#00D2FF" d="M99.617 8.057c-3.089 6.078-4.756 14.267-4.756 24.078v423.73c0 9.812 1.667 18.001 4.756 24.078l.933.925L332.766 256v-2.005L100.55 7.132z"/>
                   <path fill="#00F076" d="M409.803 333.61l-77.037-77.037V256v-2.005l77.038-77.037.918.523 91.243 51.848c26.058 14.833 26.058 39.087 0 53.92l-91.243 51.848z"/>
                   <path fill="#FF3A44" d="M411.007 332.85L332.766 254.6 99.617 487.665c8.5 8.907 21.988 10.008 37.436.7l273.954-155.515"/>
                   <path fill="#FFD227" d="M411.007 176.35L137.053 20.833c-15.448-8.815-28.936-7.714-37.436.7L332.766 254.6l78.241-78.25z"/>
                 </svg>
               </div>
-              <div className="flex-1">
-                <p className="text-sm text-gray-600 font-medium">Get it on</p>
-                <p className="text-2xl font-bold">Google Play</p>
+              <div className="flex-1 text-center md:text-left">
+                <p className="text-xs md:text-sm text-gray-600 font-medium">Get it on</p>
+                <p className="text-lg md:text-2xl font-bold">Google Play</p>
               </div>
-              <Download className="w-6 h-6 text-primary-500 group-hover:translate-y-1 transition-transform" />
+              <Download className="hidden md:block w-5 h-5 md:w-6 md:h-6 text-primary-500 group-hover:translate-y-1 transition-transform flex-shrink-0" />
             </a>
 
             {/* Demo Web Creator */}
@@ -137,19 +137,19 @@ const AppDownload = () => {
               href="https://web.theplatformapi.com/create-company-user?companyName=FX777&isDemo=true&parentId=29102"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-2xl p-6 flex items-center gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-xl md:rounded-2xl p-3 md:p-6 flex flex-col md:flex-row items-center gap-2 md:gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <svg className="w-6 h-6 md:w-8 md:h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M13 7H7v6h6V7z"/>
                   <path fillRule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2V2a1 1 0 112 0v1h1a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v1a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1h-2v1a1 1 0 11-2 0v-1H7a2 2 0 01-2-2v-2H4a1 1 0 110-2h1V9H4a1 1 0 110-2h1V5H4a1 1 0 110-2h1V2a2 2 0 012-2h2V1a1 1 0 010-2zm9 6a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd"/>
                 </svg>
               </div>
-              <div className="flex-1">
-                <p className="text-sm text-gray-600 font-medium">Try Demo</p>
-                <p className="text-2xl font-bold">Web Creator</p>
+              <div className="flex-1 text-center md:text-left">
+                <p className="text-xs md:text-sm text-gray-600 font-medium">Try Demo</p>
+                <p className="text-lg md:text-2xl font-bold">Web Creator</p>
               </div>
-              <Download className="w-6 h-6 text-primary-500 group-hover:translate-y-1 transition-transform" />
+              <Download className="hidden md:block w-5 h-5 md:w-6 md:h-6 text-primary-500 group-hover:translate-y-1 transition-transform flex-shrink-0" />
             </a>
 
             {/* Real Web Creator */}
@@ -157,19 +157,19 @@ const AppDownload = () => {
               href="https://web.theplatformapi.com/create-company-user?companyName=FX777&isDemo=false&parentId=29103"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-2xl p-6 flex items-center gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+              className="group bg-white hover:bg-gray-50 text-dark-900 rounded-xl md:rounded-2xl p-3 md:p-6 flex flex-col md:flex-row items-center gap-2 md:gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <svg className="w-6 h-6 md:w-8 md:h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M13 7H7v6h6V7z"/>
                   <path fillRule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2V2a1 1 0 112 0v1h1a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v1a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1h-2v1a1 1 0 11-2 0v-1H7a2 2 0 01-2-2v-2H4a1 1 0 110-2h1V9H4a1 1 0 110-2h1V5H4a1 1 0 110-2h1V2a2 2 0 012-2h2V1a1 1 0 010-2zm9 6a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd"/>
                 </svg>
               </div>
-              <div className="flex-1">
-                <p className="text-sm text-gray-600 font-medium">Start Real</p>
-                <p className="text-2xl font-bold">Web Creator</p>
+              <div className="flex-1 text-center md:text-left">
+                <p className="text-xs md:text-sm text-gray-600 font-medium">Start Real</p>
+                <p className="text-lg md:text-2xl font-bold">Web Creator</p>
               </div>
-              <Download className="w-6 h-6 text-primary-500 group-hover:translate-y-1 transition-transform" />
+              <Download className="hidden md:block w-5 h-5 md:w-6 md:h-6 text-primary-500 group-hover:translate-y-1 transition-transform flex-shrink-0" />
             </a>
           </div>
         </div>
