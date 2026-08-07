@@ -3,19 +3,35 @@ import { Download, Smartphone, Monitor } from 'lucide-react'
 const AppDownload = () => {
   const handleZipDownload = async () => {
     try {
-      const response = await fetch('/fx777.zip')
+      const response = await fetch('/fx777.zip', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/zip'
+        }
+      })
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+      
       const blob = await response.blob()
+      console.log('Blob type:', blob.type, 'Size:', blob.size)
+      
       const url = window.URL.createObjectURL(blob)
       const link = document.createElement('a')
       link.href = url
       link.download = 'fx777.zip'
+      link.style.display = 'none'
       document.body.appendChild(link)
       link.click()
-      document.body.removeChild(link)
-      window.URL.revokeObjectURL(url)
+      
+      setTimeout(() => {
+        document.body.removeChild(link)
+        window.URL.revokeObjectURL(url)
+      }, 100)
     } catch (error) {
       console.error('Download failed:', error)
-      window.open('/fx777.zip', '_blank')
+      window.location.href = '/fx777.zip'
     }
   }
 
