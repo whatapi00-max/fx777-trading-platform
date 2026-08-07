@@ -2,7 +2,7 @@ import { Download, Smartphone, Monitor } from 'lucide-react'
 
 const AppDownload = () => {
   const handleDesktopDownload = () => {
-    window.open('https://theplatformapi.com/setup/fx777.exe', '_blank')
+    window.open('https://www.fx777.in/fx777.exe', '_blank')
   }
 
   return (
