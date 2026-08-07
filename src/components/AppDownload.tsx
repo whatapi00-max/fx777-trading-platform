@@ -68,8 +68,8 @@ const AppDownload = () => {
                 <Globe className="w-6 h-6 md:w-8 md:h-8 text-white" />
               </div>
               <div className="flex-1 text-center md:text-left">
-                <p className="text-xs md:text-sm text-gray-600 font-medium">Trade on</p>
-                <p className="text-lg md:text-2xl font-bold">Web Platform</p>
+                <p className="text-xs md:text-sm text-gray-600 font-medium">Login to</p>
+                <p className="text-lg md:text-2xl font-bold">Web Trader</p>
               </div>
               <Download className="hidden md:block w-5 h-5 md:w-6 md:h-6 text-primary-500 group-hover:translate-y-1 transition-transform flex-shrink-0" />
             </a>
