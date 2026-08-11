@@ -161,6 +161,7 @@ routes.forEach(route => {
   routeHtml = routeHtml.replace(/<title>.*?<\/title>/s, '');
   routeHtml = routeHtml.replace(/<meta name="description".*?\/>/s, '');
   routeHtml = routeHtml.replace(/<meta name="keywords".*?\/>/s, '');
+  routeHtml = routeHtml.replace(/<meta name="google-site-verification".*?\/>/s, '');
   routeHtml = routeHtml.replace(/<meta property="og:.*?\/>/gs, '');
   routeHtml = routeHtml.replace(/<meta name="twitter:.*?\/>/gs, '');
   routeHtml = routeHtml.replace(/<link rel="canonical".*?\/>/s, '');
