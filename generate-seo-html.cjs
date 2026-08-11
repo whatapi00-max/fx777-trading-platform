@@ -129,6 +129,7 @@ function generateMetaTags(metadata) {
   return `    <title>${escapeHtml(metadata.title)}</title>
     <meta name="description" content="${escapeHtml(metadata.description)}" />
     <meta name="keywords" content="${escapeHtml(metadata.keywords)}" />
+    <meta name="google-site-verification" content="8F7BEvAEbMuOU-nrpQwySIURU0cIEumDFSFPnm3WENo" />
     <meta property="og:title" content="${escapeHtml(metadata.ogTitle)}" />
     <meta property="og:description" content="${escapeHtml(metadata.ogDescription)}" />
     <meta property="og:image" content="${metadata.ogImage}" />
