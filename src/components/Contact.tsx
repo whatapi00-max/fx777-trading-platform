@@ -73,7 +73,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Call Us',
-      details: '+61 468 251 570',
+      details: '+44 7868 170466',
       subdetails: 'Mon-Sat, 9 AM - 6 PM',
     },
     {
