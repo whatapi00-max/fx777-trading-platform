@@ -157,7 +157,7 @@ let indexHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
 routes.forEach(route => {
   let routeHtml = indexHtml;
 
-  // Remove old meta tags and title (but preserve google-site-verification)
+  // Remove old meta tags and title (but preserve google-site-verification and gtag)
   routeHtml = routeHtml.replace(/<title>.*?<\/title>/s, '');
   routeHtml = routeHtml.replace(/<meta name="description".*?\/>/s, '');
   routeHtml = routeHtml.replace(/<meta name="keywords".*?\/>/s, '');
@@ -166,9 +166,13 @@ routes.forEach(route => {
   routeHtml = routeHtml.replace(/<meta name="twitter:.*?\/>/gs, '');
   routeHtml = routeHtml.replace(/<link rel="canonical".*?\/>/s, '');
 
-  // Insert new meta tags before closing </head>
+  // Insert new meta tags before closing </head> (but preserve gtag script)
   const metaTags = generateMetaTags(route);
-  routeHtml = routeHtml.replace('</head>', `${metaTags}\n  </head>`);
+  // Find the position before </head> and insert meta tags there
+  const headCloseIndex = routeHtml.indexOf('</head>');
+  if (headCloseIndex !== -1) {
+    routeHtml = routeHtml.slice(0, headCloseIndex) + `${metaTags}\n  ` + routeHtml.slice(headCloseIndex);
+  }
 
   // Determine output path
   let outputPath = route.path === '/' ? 'index.html' : `${route.path.slice(1)}/index.html`;
