@@ -129,6 +129,7 @@ function generateMetaTags(metadata) {
   return `    <title>${escapeHtml(metadata.title)}</title>
     <meta name="description" content="${escapeHtml(metadata.description)}" />
     <meta name="keywords" content="${escapeHtml(metadata.keywords)}" />
+    <meta name="google-site-verification" content="8F7BEvAEbMuOU-nrpQwySIURU0cIEumDFSFPnm3WENo" />
     <meta property="og:title" content="${escapeHtml(metadata.ogTitle)}" />
     <meta property="og:description" content="${escapeHtml(metadata.ogDescription)}" />
     <meta property="og:image" content="${metadata.ogImage}" />
@@ -156,17 +157,22 @@ let indexHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
 routes.forEach(route => {
   let routeHtml = indexHtml;
 
-  // Remove old meta tags and title
+  // Remove old meta tags and title (but preserve google-site-verification and gtag)
   routeHtml = routeHtml.replace(/<title>.*?<\/title>/s, '');
   routeHtml = routeHtml.replace(/<meta name="description".*?\/>/s, '');
   routeHtml = routeHtml.replace(/<meta name="keywords".*?\/>/s, '');
+  // Don't remove google-site-verification - preserve it from source
   routeHtml = routeHtml.replace(/<meta property="og:.*?\/>/gs, '');
   routeHtml = routeHtml.replace(/<meta name="twitter:.*?\/>/gs, '');
   routeHtml = routeHtml.replace(/<link rel="canonical".*?\/>/s, '');
 
-  // Insert new meta tags before closing </head>
+  // Insert new meta tags before closing </head> (but preserve gtag script)
   const metaTags = generateMetaTags(route);
-  routeHtml = routeHtml.replace('</head>', `${metaTags}\n  </head>`);
+  // Find the position before </head> and insert meta tags there
+  const headCloseIndex = routeHtml.indexOf('</head>');
+  if (headCloseIndex !== -1) {
+    routeHtml = routeHtml.slice(0, headCloseIndex) + `${metaTags}\n  ` + routeHtml.slice(headCloseIndex);
+  }
 
   // Determine output path
   let outputPath = route.path === '/' ? 'index.html' : `${route.path.slice(1)}/index.html`;
