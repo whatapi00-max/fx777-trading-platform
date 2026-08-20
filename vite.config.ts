@@ -13,8 +13,22 @@ function googleSiteVerification() {
   }
 }
 
+function metaPixelNoscript() {
+  return {
+    name: 'meta-pixel-noscript',
+    transformIndexHtml: {
+      order: 'post' as const,
+      handler(html: string) {
+        // Inject noscript into head after build validation
+        const noscriptTag = `<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1092174352632868&ev=PageView&noscript=1" /></noscript>`
+        return html.replace('</head>', `    ${noscriptTag}\n  </head>`)
+      }
+    }
+  }
+}
+
 export default defineConfig({
-  plugins: [react(), googleSiteVerification()],
+  plugins: [react(), googleSiteVerification(), metaPixelNoscript()],
   server: {
     port: 3000,
     open: true
