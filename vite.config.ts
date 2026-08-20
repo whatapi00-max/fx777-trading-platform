@@ -19,9 +19,9 @@ function metaPixelNoscript() {
     transformIndexHtml: {
       order: 'post' as const,
       handler(html: string) {
-        // Inject noscript into head after build validation
+        // Inject noscript into head AFTER build validation (bypasses HTML5 restriction)
         const noscriptTag = `<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1092174352632868&ev=PageView&noscript=1" /></noscript>`
-        return html.replace('</head>', `    ${noscriptTag}\n  </head>`)
+        return html.replace('<!-- End Meta Pixel Code -->', `${noscriptTag}\n    <!-- End Meta Pixel Code -->`)
       }
     }
   }
