@@ -1,5 +1,5 @@
 const WhatsAppButton = () => {
-  const whatsappNumber = '447454739683' // +44 7454 739683
+  const whatsappNumber = '447472104007' // +44 7472 104007
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi%20I%20want%20to%20know%20more%20about%20FX777%20trading`
 
   return (
